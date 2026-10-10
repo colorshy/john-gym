@@ -8,7 +8,7 @@ const EXERCISE_DATA = {
   strength: [
     {
       index: "01",
-      title: "ПРИСЕДАНИЯ",
+      title: "01 // ПРИСЕДАНИЯ",
       image: "/images/exercise_squat.jpg",
       instruction: "Штанга на плечах, спина прямая. Опускайся до параллели с полом, сохраняя контроль и упор в стопы.",
       sets: 4,
@@ -16,7 +16,7 @@ const EXERCISE_DATA = {
     },
     {
       index: "02",
-      title: "ТЯГА ГАНТЕЛИ",
+      title: "02 // ТЯГА ГАНТЕЛИ",
       image: "/images/exercise_row.jpg",
       instruction: "Упрись одной рукой и коленом в скамью. Держи спину ровно и подтягивай гантель к поясу.",
       sets: 4,
@@ -24,7 +24,7 @@ const EXERCISE_DATA = {
     },
     {
       index: "03",
-      title: "СГИБАНИЯ НА БИЦЕПС",
+      title: "03 // СГИБАНИЯ НА БИЦЕПС",
       image: "/images/exercise_biceps.jpg",
       instruction: "Фиксируй локти у корпуса. Контролируй подъем снаряда и фазу плавного опускания без раскачки.",
       sets: 4,
@@ -34,24 +34,24 @@ const EXERCISE_DATA = {
   balance: [
     {
       index: "01",
-      title: "РУМЫНСКАЯ ТЯГА НА 1 НОГЕ",
-      image: "/images/exercise_squat.jpg",
+      title: "01 // РУМЫНСКАЯ ТЯГА НА 1 НОГЕ",
+      image: "/images/exercise_rdl.jpg",
       instruction: "Удерживай осевой баланс, слегка сгибая опорную ногу. Отводи таз назад и контролируй корпус.",
       sets: 4,
       reps: 10
     },
     {
       index: "02",
-      title: "ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ",
-      image: "/images/exercise_row.jpg",
+      title: "02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ",
+      image: "/images/exercise_plank.jpg",
       instruction: "Напрягай кор и ягодицы. Плечи строго над локтями, нейтральное положение шеи и позвоночника.",
       sets: 4,
       reps: 10
     },
     {
       index: "03",
-      title: "БОКОВЫЕ ВЫПАДЫ С ВЕСОМ",
-      image: "/images/exercise_biceps.jpg",
+      title: "03 // БОКОВЫЕ ВЫПАДЫ С ВЕСОМ",
+      image: "/images/exercise_side_lunge.jpg",
       instruction: "Широкий шаг в сторону, таз назад. Колено по вектору носка, сохраняй прямую спину.",
       sets: 4,
       reps: 10
@@ -60,7 +60,7 @@ const EXERCISE_DATA = {
   endurance: [
     {
       index: "01",
-      title: "ИНТЕРВАЛЬНАЯ ТЯГА",
+      title: "01 // ИНТЕРВАЛЬНАЯ ТЯГА",
       image: "/images/exercise_row.jpg",
       instruction: "Работа на взрывную силу с минимальным интервалом отдыха. Держи ритмичное дыхание.",
       sets: 4,
@@ -68,7 +68,7 @@ const EXERCISE_DATA = {
     },
     {
       index: "02",
-      title: "БЁРПИ С ПРЫЖКОМ НА ПЛАТФОРМУ",
+      title: "02 // БЁРПИ С ПРЫЖКОМ НА ПЛАТФОРМУ",
       image: "/images/exercise_squat.jpg",
       instruction: "Полное касание грудью пола, мощный толчок и мягкое приземление на две стопы.",
       sets: 4,
@@ -76,7 +76,7 @@ const EXERCISE_DATA = {
     },
     {
       index: "03",
-      title: "СИЛОВОЙ ФЕРМЕРСКИЙ ПРОХОД",
+      title: "03 // СИЛОВОЙ ФЕРМЕРСКИЙ ПРОХОД",
       image: "/images/exercise_biceps.jpg",
       instruction: "Тяжелые гантели по бокам, расправленные плечи, ровный темп шага без наклонов корпуса.",
       sets: 4,
@@ -86,9 +86,12 @@ const EXERCISE_DATA = {
 };
 
 // State
-let currentCategory = 'strength';
-let activeCardIndex = 1; // 0-indexed: 1 = second card ("ТЯГА ГАНТЕЛИ")
-const addedExercises = new Set();
+let currentCategory = 'balance';
+let activeCardIndex = 1; // 0-indexed: 1 = second card ("02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ")
+const addedExercises = new Set([
+  "02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ",
+  "03 // БОКОВЫЕ ВЫПАДЫ С ВЕСОМ"
+]);
 
 // DOM Elements
 const navToggle = document.getElementById('nav-toggle');

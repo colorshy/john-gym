@@ -107,11 +107,11 @@
           </h2>
 
           <div class="programs-tabs" role="tablist" aria-label="Категории тренировок">
-            <button type="button" class="program-tab active" role="tab" aria-selected="true" id="tab-strength" data-category="strength">
+            <button type="button" class="program-tab" role="tab" aria-selected="false" id="tab-strength" data-category="strength">
               <span class="program-tab-title">Силовые тренировки</span>
               <span class="program-tab-sub">[РАЗВИТИЕ СИЛЫ]</span>
             </button>
-            <button type="button" class="program-tab" role="tab" aria-selected="false" id="tab-balance" data-category="balance">
+            <button type="button" class="program-tab active" role="tab" aria-selected="true" id="tab-balance" data-category="balance">
               <span class="program-tab-title">Баланс и контроль</span>
               <span class="program-tab-sub">[СТАБИЛЬНОСТЬ]</span>
             </button>
@@ -126,17 +126,17 @@
         <div class="programs-carousel-wrap">
           <div class="programs-cards-grid" id="exercise-cards-container">
             
-            <!-- Card 01: Squats -->
+            <!-- Card 01: Romanian Deadlift 1 Leg -->
             <article class="exercise-card" data-index="0" id="exercise-card-1" tabindex="0">
               <div class="exercise-card-media">
-                <img src="/images/exercise_squat.jpg" alt="Приседания со штангой" class="exercise-card-img" loading="lazy">
+                <img src="/images/exercise_rdl.jpg" alt="01 // РУМЫНСКАЯ ТЯГА НА 1 НОГЕ" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <h3 class="exercise-title">ПРИСЕДАНИЯ</h3>
+                <h3 class="exercise-title">01 // РУМЫНСКАЯ ТЯГА НА 1 НОГЕ</h3>
               </div>
               <div class="exercise-card-content">
-                <p class="exercise-instruction sr-only">Штанга на плечах, спина прямая. Опускайся до параллели с полом, удерживая упор в центр стопы.</p>
+                <p class="exercise-instruction sr-only">Удерживай осевой баланс, слегка сгибая опорную ногу. Отводи таз назад и контролируй корпус.</p>
                 <div class="exercise-meta-bar">
                   <div class="exercise-stats">
                     <div class="exercise-stat-item">
@@ -149,23 +149,23 @@
                     </div>
                   </div>
                   <div class="exercise-actions">
-                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="ПРИСЕДАНИЯ">[ + В МОЮ ПРОГРАММУ ]</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="01 // РУМЫНСКАЯ ТЯГА НА 1 НОГЕ">[ + В МОЮ ПРОГРАММУ ]</button>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- Card 02: Dumbbell Row (Active Featured Card) -->
+            <!-- Card 02: Plank on Swiss Ball (Active Center Card) -->
             <article class="exercise-card active-card" data-index="1" id="exercise-card-2" tabindex="0">
               <div class="exercise-card-media">
-                <img src="/images/exercise_row.jpg" alt="Тяга гантели в наклоне" class="exercise-card-img" loading="lazy">
+                <img src="/images/exercise_plank.jpg" alt="02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <h3 class="exercise-title">ТЯГА ГАНТЕЛИ</h3>
+                <h3 class="exercise-title">02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ</h3>
               </div>
               <div class="exercise-card-content">
-                <p class="exercise-instruction">Упрись одной рукой и коленом в скамью. Держи спину ровно и подтягивай гантель к поясу.</p>
+                <p class="exercise-instruction">Напрягай кор и ягодицы. Плечи строго над локтями, нейтральное положение шеи и позвоночника.</p>
                 <div class="exercise-meta-bar">
                   <div class="exercise-stats">
                     <div class="exercise-stat-item">
@@ -178,23 +178,23 @@
                     </div>
                   </div>
                   <div class="exercise-actions">
-                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="ТЯГА ГАНТЕЛИ">[ + В МОЮ ПРОГРАММУ ]</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn added" data-exercise="02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ">[ ✓ В ПРОГРАММЕ ]</button>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- Card 03: Bicep Curl -->
+            <!-- Card 03: Side Lunge with Weight -->
             <article class="exercise-card" data-index="2" id="exercise-card-3" tabindex="0">
               <div class="exercise-card-media">
-                <img src="/images/exercise_biceps.jpg" alt="Сгибания на бицепс" class="exercise-card-img" loading="lazy">
+                <img src="/images/exercise_side_lunge.jpg" alt="03 // БОКОВЫЕ ВЫПАДЫ С ВЕСОМ" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <h3 class="exercise-title">СГИБАНИЯ НА БИЦЕПС</h3>
+                <h3 class="exercise-title">03 // БОКОВЫЕ ВЫПАДЫ С ВЕСОМ</h3>
               </div>
               <div class="exercise-card-content">
-                <p class="exercise-instruction sr-only">Фиксируй локти у корпуса. Контролируй подъем снаряда и фазу плавного опускания.</p>
+                <p class="exercise-instruction sr-only">Широкий шаг в сторону, таз назад. Колено по вектору носка, сохраняй прямую спину.</p>
                 <div class="exercise-meta-bar">
                   <div class="exercise-stats">
                     <div class="exercise-stat-item">
@@ -207,7 +207,7 @@
                     </div>
                   </div>
                   <div class="exercise-actions">
-                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="СГИБАНИЯ НА БИЦЕПС">[ + В МОЮ ПРОГРАММУ ]</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn added" data-exercise="03 // БОКОВЫЕ ВЫПАДЫ С ВЕСОМ">[ ✓ В ПРОГРАММЕ ]</button>
                   </div>
                 </div>
               </div>
@@ -220,7 +220,7 @@
         <div class="programs-bottom">
           <a href="#memberships" class="programs-bottom-link" id="programs-builder-cta">
             <span class="programs-bottom-label">СОБЕРИ СВОЮ ТРЕНИРОВКУ С JOHN GYM // </span>
-            <span class="programs-bottom-action">Создать программу тренировок →</span>
+            <span class="programs-bottom-action">СОЗДАТЬ ПРОГРАММУ ТРЕНИРОВОК →</span>
           </a>
         </div>
       </div>
