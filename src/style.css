@@ -570,12 +570,48 @@ button {
   background-color: var(--color-wild-oats);
   color: #111111;
   min-height: 100vh;
-  padding: 100px 5vw 40px;
+  padding: 100px calc(5vw + var(--ribbon-width, 48px)) 40px 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   box-sizing: border-box;
+}
+
+/* Persistent full-height vertical branding strip in deep crimson burgundy (#8E1533) */
+.programs-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--ribbon-width, 48px);
+  background-color: var(--color-sweet-cherry);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 10;
+}
+
+.programs-ribbon-text {
+  writing-mode: vertical-rl;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-wild-oats);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .programs-section {
+    padding-right: 5vw;
+  }
+  .programs-ribbon {
+    display: none;
+  }
 }
 
 .programs-container {
@@ -721,15 +757,15 @@ button {
 }
 
 #exercise-card-1 .exercise-card-img {
-  object-position: center 45%;
+  object-position: center 30%;
 }
 
 #exercise-card-2 .exercise-card-img {
-  object-position: center 25%;
+  object-position: center 35%;
 }
 
 #exercise-card-3 .exercise-card-img {
-  object-position: center 20%;
+  object-position: center 25%;
 }
 
 .exercise-card:hover .exercise-card-img {

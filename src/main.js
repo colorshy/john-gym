@@ -8,7 +8,7 @@ const EXERCISE_DATA = {
   strength: [
     {
       index: "01",
-      title: "01 // ПРИСЕДАНИЯ",
+      title: "01 // ПРИСЕДАНИЯ СО ШТАНГОЙ",
       image: "/images/exercise_squat.jpg",
       instruction: "Штанга на плечах, спина прямая. Опускайся до параллели с полом, сохраняя контроль и упор в стопы.",
       sets: 4,
@@ -16,15 +16,15 @@ const EXERCISE_DATA = {
     },
     {
       index: "02",
-      title: "02 // ТЯГА ГАНТЕЛИ",
-      image: "/images/exercise_row.jpg",
+      title: "02 // ТЯГА ГАНТЕЛИ В НАКЛОНЕ",
+      image: "/images/exercise_db_row.jpg",
       instruction: "Упрись одной рукой и коленом в скамью. Держи спину ровно и подтягивай гантель к поясу.",
       sets: 4,
       reps: 10
     },
     {
       index: "03",
-      title: "03 // СГИБАНИЯ НА БИЦЕПС",
+      title: "03 // ПОДЪЕМ НА БИЦЕПС",
       image: "/images/exercise_biceps.jpg",
       instruction: "Фиксируй локти у корпуса. Контролируй подъем снаряда и фазу плавного опускания без раскачки.",
       sets: 4,
@@ -86,11 +86,11 @@ const EXERCISE_DATA = {
 };
 
 // State
-let currentCategory = 'endurance';
-let activeCardIndex = 1; // 0-indexed: 1 = second card ("02 // БЁРПИ С ПРЫЖКОМ НА ПЛАТФОРМУ")
+let currentCategory = 'strength';
+let activeCardIndex = 1; // 0-indexed: 1 = second card ("02 // ТЯГА ГАНТЕЛИ В НАКЛОНЕ")
 const addedExercises = new Set([
-  "01 // ИНТЕРВАЛЬНАЯ ТЯГА",
-  "03 // СИЛОВОЙ ФЕРМЕРСКИЙ ПРОХОД"
+  "02 // ТЯГА ГАНТЕЛИ В НАКЛОНЕ",
+  "03 // ПОДЪЕМ НА БИЦЕПС"
 ]);
 
 // DOM Elements
