@@ -11,22 +11,22 @@
 
 :root {
   /* 4 Brand Hex Codes */
-  --color-black-safflower: #342E37;
+  --color-black-safflower: #141414;
   --color-chanterelle:     #DEA81C;
-  --color-wild-oats:       #ECDCC4;
-  --color-sweet-cherry:    #8E1533;
+  --color-wild-oats:       #E9D8BE;
+  --color-sweet-cherry:    #821630;
 
   /* Semantic Roles for Hero Redesign */
   --color-hero-bg:         #000000;                      /* Глубокий темный фон по референсу */
   --color-header-bg:       var(--color-wild-oats);       /* Дополнительный фон */
   --color-header-text:     var(--color-black-safflower); /* Текст в шапке */
   --color-hero-text:       var(--color-wild-oats);       /* Текст в Hero */
-  --color-hero-accent:     var(--color-sweet-cherry);    /* Акцент (СИЛЬНЕЙ, GYM) */
+  --color-hero-accent:     var(--color-sweet-cherry);    /* Акцент */
   --color-hero-cta-bg:     var(--color-sweet-cherry);    /* Кнопка фон */
-  --color-hero-cta-text:   var(--color-wild-oats);       /* Кнопка текст */
+  --color-hero-cta-text:   #FFFFFF;                      /* Кнопка текст */
   --color-hero-cta-accent: var(--color-chanterelle);     /* Кнопка hover-акцент */
   --color-hero-ribbon-bg:  var(--color-sweet-cherry);    /* Декоративная полоса фон */
-  --color-hero-ribbon-text:var(--color-wild-oats);       /* Декоративная полоса текст */
+  --color-hero-ribbon-text:#D66D82;                      /* Декоративная полоса текст */
 
   /* Global Fallback & Alignment Tokens */
   --color-obsidian:        var(--color-black-safflower);
@@ -252,20 +252,21 @@ button {
   align-items: center;
   gap: 6px;
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   user-select: none;
+  color: #141414;
 }
 
 .brand-john {
-  color: var(--color-black-safflower);
+  color: #141414;
 }
 
 .brand-gym {
-  color: var(--color-sweet-cherry);
+  color: #141414;
 }
 
 .nav-menu {
@@ -395,19 +396,19 @@ button {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 48% 1fr var(--ribbon-width);
+  grid-template-columns: 50% 1fr var(--ribbon-width);
   width: 100%;
   min-height: calc(100vh - var(--nav-height));
 }
 
 .hero-left {
   background-color: var(--color-hero-bg);
-  padding: clamp(48px, 5.2vw, 96px) clamp(40px, 5vw, 84px);
+  padding: clamp(40px, 4.5vw, 84px) clamp(36px, 4.5vw, 76px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-content-wrap {
@@ -418,17 +419,17 @@ button {
 }
 
 .hero-title {
-  font-family: "Bebas Neue", "Oswald", sans-serif;
-  font-size: clamp(62px, 7.8vw, 120px);
+  font-family: "Oswald", "Bebas Neue", "Anton", sans-serif;
+  font-size: clamp(52px, 7.2vw, 112px);
   font-weight: 700;
-  line-height: 0.94;
-  letter-spacing: 0.02em;
+  line-height: 0.93;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   color: var(--color-hero-text);
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 0.9vw, 14px);
+  gap: clamp(4px, 0.5vw, 8px);
   user-select: none;
 }
 
@@ -449,42 +450,47 @@ button {
   font-family: var(--font-body);
   font-size: clamp(14px, 1.05vw, 16px);
   line-height: 1.55;
-  color: rgba(236, 220, 196, 0.72);
+  color: #8E8B86;
   max-width: 480px;
-  margin-top: clamp(20px, 2.4vw, 32px);
+  margin-top: clamp(20px, 2.2vw, 30px);
   margin-bottom: 0;
 }
 
 .btn-hero-cta {
   background-color: var(--color-hero-cta-bg);
-  color: var(--color-hero-cta-text);
+  color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 16px 36px;
-  border-radius: 4px;
-  border: 1px solid rgba(236, 220, 196, 0.16);
+  padding: 15px 32px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-top: clamp(26px, 3.2vw, 40px);
-  box-shadow: 0 4px 24px rgba(142, 21, 51, 0.45);
+  margin-top: clamp(26px, 3.2vw, 38px);
+  box-shadow: 0 0 24px rgba(130, 22, 48, 0.5);
   cursor: pointer;
   transition: all var(--transition-smooth);
 }
 
 .btn-hero-cta:hover {
-  background-color: var(--color-hero-cta-bg);
-  border-color: var(--color-hero-cta-accent);
-  color: var(--color-hero-cta-text);
+  background-color: #981938;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(142, 21, 51, 0.6), 0 0 0 1px rgba(222, 168, 28, 0.4);
+  box-shadow: 0 4px 28px rgba(152, 25, 56, 0.65);
+}
+
+.btn-hero-cta .btn-arrow {
+  display: inline-block;
+  font-size: 13px;
+  transition: transform var(--transition-smooth);
 }
 
 .btn-hero-cta:hover .btn-arrow {
-  color: var(--color-hero-cta-accent);
   transform: translateX(4px);
 }
 
@@ -499,6 +505,18 @@ button {
   background-color: var(--color-hero-bg);
 }
 
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  background: linear-gradient(to right, #000000 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .hero-photo-wrapper {
   position: absolute;
   inset: 0;
@@ -511,30 +529,18 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  filter: contrast(1.08) brightness(0.96);
 }
 
-/* Far-Right Vertical Accent Ribbon (#8E1533 & #ECDCC4) */
+/* Far-Right Vertical Accent Ribbon (#821630 & #D66D82) */
 .hero-ribbon {
   background-color: var(--color-hero-ribbon-bg);
-  border-left: 1px solid rgba(236, 220, 196, 0.16);
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
   position: relative;
-}
-
-.hero-ribbon::before {
-  content: '';
-  position: absolute;
-  top: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 36px;
-  background-color: var(--color-hero-ribbon-text);
-  opacity: 0.35;
+  width: var(--ribbon-width);
 }
 
 .hero-ribbon-text {
