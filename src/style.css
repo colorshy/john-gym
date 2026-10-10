@@ -141,30 +141,122 @@ button {
   border-width: 0;
 }
 
-/* Section Header Labels */
+/* ==========================================================================
+   MINIMAL BLACK INTRO
+   Pure solid obsidian black (#000000) canvas that smoothly reveals the hero
+   ========================================================================== */
+.black-intro {
+  display: none;
+}
+
+html.black-intro-active .black-intro {
+  display: block;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 9999;
+  pointer-events: auto;
+  opacity: 1;
+  animation: blackIntroFadeOut 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  cursor: pointer;
+}
+
+@keyframes blackIntroFadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .black-intro,
+  html.black-intro-active .black-intro {
+    display: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   SECTION LABELS — MINIMALIST ARCHITECTURAL OPEN-FRAME CORNER MARKS
+   Frames labels with rounded L-shaped marks from arrows-downleft-corner.svg 
+   and arrows-upright-corner.svg without rectangular boxes or double slashes.
+   ========================================================================== */
 .section-tag {
   display: inline-flex;
   align-items: center;
+  position: relative;
   gap: 8px;
-  font-family: var(--font-display);
-  font-size: 14px;
+  padding: 6px 14px;
+  font-family: var(--font-body);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-bone);
-  margin-bottom: 16px;
+  color: var(--color-wild-oats);
+  margin-bottom: 24px;
+  width: fit-content;
+  user-select: none;
+  background: transparent;
+  border: none;
 }
 
 .section-tag .tag-num {
-  color: var(--color-crimson);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-sweet-cherry);
 }
 
+.section-tag .tag-text,
+.section-tag .tag-label {
+  color: var(--color-wild-oats);
+}
+
+/* Obsolete decorative bar */
 .section-tag .tag-bar {
-  display: inline-block;
-  width: 3px;
+  display: none;
+}
+
+/* Top-Right Corner Mark (arrows-upright-corner.svg) */
+.section-tag::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 16px;
   height: 16px;
-  background-color: var(--color-crimson);
-  margin-right: 4px;
+  background-color: var(--color-wild-oats);
+  -webkit-mask: url('/images/arrows-upright-corner.svg') no-repeat center / contain;
+  mask: url('/images/arrows-upright-corner.svg') no-repeat center / contain;
+  pointer-events: none;
+}
+
+/* Bottom-Left Corner Mark (arrows-downleft-corner.svg) */
+.section-tag::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -3px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-wild-oats);
+  -webkit-mask: url('/images/arrows-downleft-corner.svg') no-repeat center / contain;
+  mask: url('/images/arrows-downleft-corner.svg') no-repeat center / contain;
+  pointer-events: none;
 }
 
 /* Buttons */
@@ -1072,118 +1164,186 @@ button {
 
 /* ==========================================================================
    SECTION 04 — SCHEDULE & LOCATION
+   Minimalist Architectural Redesign (ONE SEAMLESS ADMIN editorial language)
    ========================================================================== */
 .location-section {
+  position: relative;
   background-color: var(--color-obsidian);
   color: var(--color-bone);
-  padding: 90px 5vw 100px;
+  padding: clamp(90px, 9vw, 150px) 5vw clamp(100px, 10vw, 160px);
   border-top: 1px solid var(--color-border);
+  overflow: hidden;
+  scroll-margin-top: calc(var(--nav-height) + 16px);
 }
 
 .location-container {
-  max-width: 1600px;
+  max-width: 1560px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 70px;
+  grid-template-columns: 1fr 1.08fr;
+  gap: clamp(48px, 6vw, 110px);
   align-items: center;
 }
 
+/* Editorial Column */
 .location-info-col {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
+/* Location Eyebrow (Uses .section-tag corner-frame system) */
+.location-eyebrow {
+  margin-bottom: 24px;
+}
+
+/* Monumental Condensed Headline */
 .location-headline {
   font-family: var(--font-heading);
-  font-size: clamp(38px, 4.2vw, 68px);
+  font-size: clamp(42px, 5vw, 84px);
   font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
   text-transform: uppercase;
-  color: var(--color-bone);
-  margin-bottom: 32px;
-}
-
-.location-contact-list {
+  margin: 0 0 28px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
 }
 
-.location-contact-item {
+.location-headline-main {
+  color: var(--color-wild-oats);
+}
+
+.location-headline-sub {
+  color: var(--color-sweet-cherry);
+}
+
+/* Compact Editorial Lead Paragraph */
+.location-lead {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.68;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin: 0 0 40px 0;
+}
+
+/* Architectural Key-Value Metadata Grid */
+.location-meta-grid {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--color-bone);
+  flex-direction: column;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 44px;
+  border-top: 1px solid rgba(236, 220, 196, 0.12);
 }
 
-.location-contact-item svg {
-  color: var(--color-bone);
+.location-meta-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(236, 220, 196, 0.1);
+  gap: 20px;
+}
+
+.meta-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
   flex-shrink: 0;
 }
 
-.location-contact-item a:hover {
-  color: var(--color-crimson);
-}
-
-.schedule-table {
-  width: 100%;
-  margin-bottom: 36px;
-}
-
-.schedule-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 14px;
-  letter-spacing: 0.04em;
-}
-
-.schedule-row:first-child {
-  border-top: 1px solid var(--color-border);
-}
-
-.schedule-day {
-  font-weight: 700;
-  text-transform: uppercase;
+.meta-val {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
   color: var(--color-bone);
+  text-align: right;
 }
 
-.schedule-time {
-  font-weight: 600;
+.meta-link {
+  color: var(--color-bone);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.meta-link:hover {
+  color: var(--color-sweet-cherry);
+}
+
+.meta-mono {
   font-variant-numeric: tabular-nums;
-  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.location-action {
+  display: flex;
+  align-items: center;
 }
 
 .btn-location-map {
-  background-color: var(--color-crimson);
-  color: var(--color-bone);
-  border: 1px solid var(--color-crimson);
-  align-self: flex-start;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--color-sweet-cherry);
+  color: #FFFFFF;
+  border: 1px solid var(--color-sweet-cherry);
   padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .btn-location-map:hover {
   background-color: var(--color-crimson-hover);
   border-color: var(--color-crimson-hover);
+  transform: translateY(-2px);
 }
 
-/* Map area */
-.location-map-col {
+.btn-location-map .btn-arrow {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.btn-location-map:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Map Architectural Container */
+.location-map-wrapper {
   position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  height: 520px;
+  width: 100%;
+}
+
+.location-map-col {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: clamp(480px, 34vw, 580px);
   background-color: #E8E2D8;
-  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 220, 196, 0.14);
+  text-decoration: none;
   cursor: pointer;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.location-map-col:hover {
+  border-color: rgba(236, 220, 196, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
 }
 
 .map-background-img {
@@ -1191,11 +1351,12 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.4s ease;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
 }
 
 .location-map-col:hover .map-background-img {
-  transform: scale(1.015);
+  transform: scale(1.025);
 }
 
 .map-grid-overlay {
@@ -1208,29 +1369,66 @@ button {
   pointer-events: none;
 }
 
-/* Subtle Interactive Radar Pulse centered exactly over the location pin */
-.map-radar-pulse {
-  position: absolute;
-  top: 49.5%;
-  left: 49.5%;
-  width: 48px;
-  height: 48px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 2px solid rgba(142, 21, 51, 0.85);
-  animation: mapPulse 2.2s infinite ease-out;
-  pointer-events: none;
-  z-index: 4;
+
+
+/* ==========================================================================
+   SECTION 04 — INTERACTIVE RESTRAINED SCROLL REVEAL
+   Progressive reveal: Eyebrow + Headline -> Details -> Map Unmasking
+   ========================================================================== */
+.location-section.reveal-ready .location-eyebrow,
+.location-section.reveal-ready .location-headline {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes mapPulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.6);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(2.8);
-    opacity: 0;
+.location-section.reveal-ready .location-lead,
+.location-section.reveal-ready .location-meta-grid,
+.location-section.reveal-ready .location-action {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+.location-section.reveal-ready .location-map-wrapper {
+  opacity: 0;
+  clip-path: inset(10% 0 10% 0 round 8px);
+  transform: scale(0.97);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+}
+
+/* Revealed State */
+.location-section.is-revealed .location-eyebrow,
+.location-section.is-revealed .location-headline {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-section.is-revealed .location-lead,
+.location-section.is-revealed .location-meta-grid,
+.location-section.is-revealed .location-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-section.is-revealed .location-map-wrapper {
+  opacity: 1;
+  clip-path: inset(0 0 0 0 round 8px);
+  transform: scale(1);
+}
+
+/* Accessibility & Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .location-section.reveal-ready .location-eyebrow,
+  .location-section.reveal-ready .location-headline,
+  .location-section.reveal-ready .location-lead,
+  .location-section.reveal-ready .location-meta-grid,
+  .location-section.reveal-ready .location-action,
+  .location-section.reveal-ready .location-map-wrapper {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
   }
 }
 
@@ -2307,9 +2505,12 @@ button {
   
   .programs-section,
   .gym-section,
-  .location-section,
   .memberships-section {
     padding: 70px 20px 80px;
+  }
+  
+  .location-section {
+    padding: 85px 20px 85px;
   }
   
   .programs-title,
@@ -2335,9 +2536,9 @@ button {
     height: 380px;
   }
   
-  .map-radar-pulse {
-    top: 49.5%;
-    left: 49.5%;
+  .location-info-col .btn-location-map {
+    width: 100%;
+    justify-content: center;
   }
   
   .discount-strip {

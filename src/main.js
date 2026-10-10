@@ -529,9 +529,87 @@ function initTigerTracker() {
   updateTracker();
 }
 
+/**
+ * Minimal Black Intro Controller
+ * Manages full-screen pure obsidian black (#000000) opening transition lifecycle,
+ * sessionStorage persistence, click/touch skip, and clean DOM unmounting.
+ */
+function initBlackIntro() {
+  const introEl = document.getElementById('black-intro');
+  if (!introEl) return;
+
+  const isActive = document.documentElement.classList.contains('black-intro-active');
+  if (!isActive) {
+    introEl.remove();
+    return;
+  }
+
+  try {
+    sessionStorage.setItem('jg-intro-seen', '1');
+  } catch (e) {}
+
+  let finished = false;
+  const finishIntro = () => {
+    if (finished) return;
+    finished = true;
+    document.documentElement.classList.remove('black-intro-active');
+    if (introEl && introEl.parentNode) {
+      introEl.remove();
+    }
+  };
+
+  // Instant skip on any click or touch
+  introEl.addEventListener('click', finishIntro, { once: true });
+  introEl.addEventListener('touchstart', finishIntro, { once: true, passive: true });
+
+  // Complete lifecycle timer (1200ms total, animation completes smoothly at 1100ms)
+  setTimeout(finishIntro, 1200);
+}
+
+/**
+ * Location Section Restrained Progressive Scroll Reveal
+ * Uses IntersectionObserver to trigger an architectural reveal:
+ * Eyebrow & headline -> Metadata & CTA -> Map unmasking.
+ * Fail-safe: if reduced motion is requested or IntersectionObserver is unsupported,
+ * reveals immediately.
+ */
+function initLocationReveal() {
+  const section = document.getElementById('location');
+  if (!section) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    section.classList.add('is-revealed');
+    return;
+  }
+
+  // Mark ready for scroll reveal
+  section.classList.add('reveal-ready');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          section.classList.add('is-revealed');
+          observer.unobserve(section);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.12
+    }
+  );
+
+  observer.observe(section);
+}
+
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
+  initBlackIntro();
   renderExerciseCards();
   initTigerTracker();
+  initLocationReveal();
 });
 
