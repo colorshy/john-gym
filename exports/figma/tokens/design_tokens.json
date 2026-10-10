@@ -1,0 +1,121 @@
+{
+  "name": "JOHN GYM Design System Tokens",
+  "version": "2.0.0",
+  "theme": "Heavyweight Athletic Brutalism / Kinetic Editorial",
+  "color": {
+    "brand": {
+      "accent": { "value": "#FC541E", "type": "color", "description": "Primary high-contrast athletic neon orange accent" },
+      "accentHover": { "value": "#E24410", "type": "color", "description": "Interactive hover state for primary accent" },
+      "crimson": { "value": "#8B1E2B", "type": "color", "description": "Editorial deep wine / crimson for ribbons and subtle accents" },
+      "crimsonHover": { "value": "#A82435", "type": "color", "description": "Interactive hover state for crimson" }
+    },
+    "canvas": {
+      "obsidian": { "value": "#0B0C0E", "type": "color", "description": "Global dark base canvas" },
+      "black": { "value": "#141414", "type": "color", "description": "Hero left typography panel & solid text" },
+      "warmEditorial": { "value": "#FFF2EE", "type": "color", "description": "Warm off-white editorial background for Programs section" },
+      "pureBlack": { "value": "#000000", "type": "color", "description": "Hero photography backing" }
+    },
+    "surface": {
+      "darkSlate": { "value": "#131519", "type": "color", "description": "Default dark card surface" },
+      "darkSlateHover": { "value": "#1A1D23", "type": "color", "description": "Card hover surface" },
+      "overlay": { "value": "rgba(20, 20, 20, 0.75)", "type": "color", "description": "Exercise card dark contrast gradient overlay" }
+    },
+    "text": {
+      "starkWhite": { "value": "#FFFFFF", "type": "color", "description": "Hero display text and primary button labels" },
+      "bone": { "value": "#FAF9F6", "type": "color", "description": "Primary titles, headlines, and card titles" },
+      "charcoal": { "value": "#1E1E2F", "type": "color", "description": "Programs subtitle charcoal" },
+      "muted": { "value": "#8C929D", "type": "color", "description": "Secondary labels, stats, meta copy" },
+      "dim": { "value": "#606670", "type": "color", "description": "Subtle captions and footnote notes" }
+    },
+    "border": {
+      "hairline": { "value": "rgba(255, 255, 255, 0.12)", "type": "color", "description": "Standard 1px structural hairline border" },
+      "subtle": { "value": "rgba(255, 255, 255, 0.08)", "type": "color", "description": "Secondary inner dividers" },
+      "accent": { "value": "#FC541E", "type": "color", "description": "Active card and featured plan border" }
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": { "value": "Anton, Oswald, Bebas Neue, sans-serif", "type": "fontFamilies" },
+      "heading": { "value": "Oswald, Anton, sans-serif", "type": "fontFamilies" },
+      "body": { "value": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", "type": "fontFamilies" }
+    },
+    "scale": {
+      "heroHeadline": {
+        "fontFamily": "{typography.fontFamilies.display}",
+        "fontSize": { "desktop": "122px", "mobile": "64px" },
+        "lineHeight": "0.88",
+        "letterSpacing": "-0.03em",
+        "fontWeight": "700",
+        "textTransform": "uppercase"
+      },
+      "sectionHeadline": {
+        "fontFamily": "{typography.fontFamilies.heading}",
+        "fontSize": { "desktop": "68px", "mobile": "38px" },
+        "lineHeight": "0.95",
+        "letterSpacing": "-0.01em",
+        "fontWeight": "700",
+        "textTransform": "uppercase"
+      },
+      "cardTitle": {
+        "fontFamily": "{typography.fontFamilies.heading}",
+        "fontSize": "22px",
+        "lineHeight": "1.1",
+        "letterSpacing": "0.04em",
+        "fontWeight": "700",
+        "textTransform": "uppercase"
+      },
+      "priceDisplay": {
+        "fontFamily": "{typography.fontFamilies.display}",
+        "fontSize": "42px",
+        "lineHeight": "1.0",
+        "letterSpacing": "0.01em",
+        "fontWeight": "700"
+      },
+      "sectionTag": {
+        "fontFamily": "{typography.fontFamilies.body}",
+        "fontSize": "11px",
+        "lineHeight": "1.0",
+        "letterSpacing": "0.14em",
+        "fontWeight": "800",
+        "textTransform": "uppercase"
+      },
+      "button": {
+        "fontFamily": "{typography.fontFamilies.body}",
+        "fontSize": "13px",
+        "lineHeight": "1.0",
+        "letterSpacing": "0.08em",
+        "fontWeight": "800",
+        "textTransform": "uppercase"
+      },
+      "bodyRegular": {
+        "fontFamily": "{typography.fontFamilies.body}",
+        "fontSize": "15px",
+        "lineHeight": "1.6",
+        "fontWeight": "400"
+      }
+    }
+  },
+  "spacing": {
+    "sectionPaddingY": { "value": "120px", "type": "spacing" },
+    "sectionPaddingX": { "value": "48px", "type": "spacing" },
+    "gridGap": { "value": "28px", "type": "spacing" },
+    "navHeight": { "value": "72px", "type": "spacing" },
+    "ribbonWidth": { "value": "48px", "type": "spacing" }
+  },
+  "borderRadius": {
+    "none": { "value": "0px", "type": "borderRadius" },
+    "xs": { "value": "2px", "type": "borderRadius" },
+    "sm": { "value": "4px", "type": "borderRadius" },
+    "full": { "value": "9999px", "type": "borderRadius" }
+  },
+  "shadows": {
+    "cardElevated": {
+      "value": "0 24px 60px rgba(0, 0, 0, 0.6), 0 0 32px rgba(252, 84, 30, 0.25)",
+      "type": "boxShadow"
+    },
+    "buttonAccent": {
+      "value": "0 4px 20px rgba(252, 84, 30, 0.35)",
+      "type": "boxShadow"
+    }
+  }
+}

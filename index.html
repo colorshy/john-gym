@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOHN GYM — Премиальная атлетическая база | Шымкент</title>
+  <meta name="description" content="JOHN GYM в Шымкенте. Пространство для серьёзной атлетической работы, силового тренинга и системы наставничества. Ул. Толе би, 12В.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-mark" id="nav-brand" aria-label="JOHN GYM Главная">
+        <span class="brand-john">JOHN</span>
+        <span class="brand-gym">GYM</span>
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#programs" class="nav-link" id="nav-link-programs">ПРОГРАММЫ</a></li>
+          <li><a href="#gym" class="nav-link" id="nav-link-gym">ЗАЛ</a></li>
+          <li><a href="#gym" class="nav-link" id="nav-link-trainers">ТРЕНЕРЫ</a></li>
+          <li><a href="#memberships" class="nav-link" id="nav-link-memberships">АБОНЕМЕНТЫ</a></li>
+          <li class="nav-item-mobile-only"><a href="#memberships" class="nav-link nav-link-cabinet">ЛИЧНЫЙ КАБИНЕТ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#memberships" class="nav-btn-cabinet" id="nav-cabinet-btn">ЛИЧНЫЙ КАБИНЕТ</a>
+        <div class="nav-divider" aria-hidden="true"></div>
+        <button type="button" class="nav-icon-btn" id="nav-search-btn" aria-label="Поиск">
+          <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Открыть мобильное меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         SECTION 01 — HERO
+         ======================================================================= -->
+    <section class="hero-section noise-texture" id="hero">
+      <div class="hero-grid">
+        <!-- Left Column: Monumental Headline, Value Proposition & CTA Button -->
+        <div class="hero-left">
+          <div class="hero-content-wrap">
+            <h1 class="hero-title" aria-label="ТВОЙ ПРЕДЕЛ — ЭТО ТОЛЬКО НАЧАЛО">
+              <span class="hero-line">ТВОЙ ПРЕДЕЛ —</span>
+              <span class="hero-line">ЭТО ТОЛЬКО</span>
+              <span class="hero-line">НАЧАЛО</span>
+            </h1>
+            <p class="hero-description">
+              1200 м² силовых зон, профессиональное оборудование и наставничество тренеров высшей категории.
+            </p>
+            <a href="#memberships" class="btn btn-hero-cta" id="hero-start-btn">
+              <span>ВЫБРАТЬ АБОНЕМЕНТ</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Gritty Dark Athlete Photography With Barbell -->
+        <div class="hero-right">
+          <div class="hero-photo-wrapper">
+            <img 
+              src="/images/hero_athlete_barbell.jpg" 
+              alt="Атлет JOHN GYM со штангой" 
+              class="hero-photo"
+              loading="eager"
+            >
+          </div>
+        </div>
+
+        <!-- Far-Right Vertical Accent Ribbon -->
+        <div class="hero-ribbon" aria-hidden="true">
+          <span class="hero-ribbon-text">JOHN GYM // СИЛА И ДИСЦИПЛИНА // 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 02 — PROGRAMS
+         ======================================================================= -->
+    <section class="programs-section" id="programs">
+      <div class="programs-container">
+        <!-- Section Header with Category Tabs -->
+        <div class="programs-header">
+          <h2 class="programs-title">
+            <span class="programs-title-black">СОБЕРИ СВОЮ</span><br>
+            <span class="programs-title-charcoal">ПРОГРАММУ ТРЕНИРОВОК.</span>
+          </h2>
+
+          <div class="programs-tabs" role="tablist" aria-label="Категории тренировок">
+            <button type="button" class="program-tab active" role="tab" aria-selected="true" id="tab-strength" data-category="strength">
+              <span class="program-tab-title">Силовые тренировки</span>
+              <span class="program-tab-sub">РАЗВИТИЕ СИЛЫ</span>
+            </button>
+            <button type="button" class="program-tab" role="tab" aria-selected="false" id="tab-balance" data-category="balance">
+              <span class="program-tab-title">Баланс и контроль</span>
+              <span class="program-tab-sub">СТАБИЛЬНОСТЬ</span>
+            </button>
+            <button type="button" class="program-tab" role="tab" aria-selected="false" id="tab-endurance" data-category="endurance">
+              <span class="program-tab-title">Выносливость</span>
+              <span class="program-tab-sub">РАЗВИТИЕ ВЫНОСЛИВОСТИ</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Horizontal Exercise Cards / Interactive Carousel -->
+        <div class="programs-carousel-wrap">
+          <div class="programs-cards-grid" id="exercise-cards-container">
+            
+            <!-- Card 01: Squats -->
+            <article class="exercise-card" data-index="1" id="exercise-card-1" tabindex="0">
+              <div class="exercise-card-media">
+                <img src="/images/exercise_squat.jpg" alt="Приседания со штангой" class="exercise-card-img" loading="lazy">
+                <div class="exercise-card-overlay"></div>
+              </div>
+              <div class="exercise-card-top">
+                <span class="exercise-num">01</span>
+                <h3 class="exercise-title">ПРИСЕДАНИЯ</h3>
+              </div>
+              <div class="exercise-card-content">
+                <p class="exercise-instruction sr-only">Штанга на плечах, спина прямая. Опускайся до параллели с полом, удерживая упор в центр стопы.</p>
+                <div class="exercise-meta-bar">
+                  <div class="exercise-stats">
+                    <div class="exercise-stat-item">
+                      <span class="exercise-stat-label">подходы</span>
+                      <span class="exercise-stat-value">4</span>
+                    </div>
+                    <div class="exercise-stat-item">
+                      <span class="exercise-stat-label">повторы</span>
+                      <span class="exercise-stat-value">8</span>
+                    </div>
+                  </div>
+                  <div class="exercise-actions">
+                    <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="Приседания" aria-label="Добавить приседания">+</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="Приседания">В МОЮ ПРОГРАММУ</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 02: Dumbbell Row (Active Featured Card) -->
+            <article class="exercise-card active-card" data-index="2" id="exercise-card-2" tabindex="0">
+              <div class="exercise-card-media">
+                <img src="/images/exercise_row.jpg" alt="Тяга гантели в наклоне" class="exercise-card-img" loading="lazy">
+                <div class="exercise-card-overlay"></div>
+              </div>
+              <div class="exercise-card-top">
+                <span class="exercise-num">02</span>
+                <h3 class="exercise-title">ТЯГА ГАНТЕЛИ</h3>
+              </div>
+              <div class="exercise-card-content">
+                <p class="exercise-instruction">Упрись одной рукой и коленом в скамью. Держи спину ровно и подтягивай гантель к поясу.</p>
+                <div class="exercise-meta-bar">
+                  <div class="exercise-stats">
+                    <div class="exercise-stat-item">
+                      <span class="exercise-stat-label">подходы</span>
+                      <span class="exercise-stat-value">4</span>
+                    </div>
+                    <div class="exercise-stat-item">
+                      <span class="exercise-stat-label">повторы</span>
+                      <span class="exercise-stat-value">10</span>
+                    </div>
+                  </div>
+                  <div class="exercise-actions">
+                    <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="Тяга гантели" aria-label="Добавить тягу гантели">+</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="Тяга гантели">В МОЮ ПРОГРАММУ</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 03: Bicep Curl -->
+            <article class="exercise-card" data-index="3" id="exercise-card-3" tabindex="0">
+              <div class="exercise-card-media">
+                <img src="/images/exercise_biceps.jpg" alt="Сгибания на бицепс" class="exercise-card-img" loading="lazy">
+                <div class="exercise-card-overlay"></div>
+              </div>
+              <div class="exercise-card-top">
+                <span class="exercise-num">03</span>
+                <h3 class="exercise-title">СГИБАНИЯ НА БИЦЕПС</h3>
+              </div>
+              <div class="exercise-card-content">
+                <p class="exercise-instruction sr-only">Фиксируй локти у корпуса. Контролируй подъем снаряда и фазу плавного опускания.</p>
+                <div class="exercise-meta-bar">
+                  <div class="exercise-stats">
+                    <div class="exercise-stat-item">
+                      <span class="exercise-stat-label">подходы</span>
+                      <span class="exercise-stat-value">3</span>
+                    </div>
+                    <div class="exercise-stat-item">
+                      <span class="exercise-stat-label">повторы</span>
+                      <span class="exercise-stat-value">12</span>
+                    </div>
+                  </div>
+                  <div class="exercise-actions">
+                    <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="Сгибания на бицепс" aria-label="Добавить сгибания на бицепс">+</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="Сгибания на бицепс">В МОЮ ПРОГРАММУ</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Programs Bottom Action -->
+        <div class="programs-bottom">
+          <p class="programs-bottom-label">СОБЕРИ СВОЮ ТРЕНИРОВКУ С JOHN GYM</p>
+          <a href="#memberships" class="programs-bottom-link" id="programs-builder-cta">
+            <span>Создать программу тренировок</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 03 — GYM
+         Two-Row Industrial Zigzag Layout
+         ======================================================================= -->
+    <section class="gym-section noise-texture" id="gym">
+      <div class="gym-container">
+        
+        <!-- ROW 1 — FACILITY AND EQUIPMENT -->
+        <div class="gym-row">
+          <div class="gym-text-col">
+            <div class="section-tag">
+              <span class="tag-bar"></span>
+              <span class="tag-num">03</span> // ПРОСТРАНСТВО И ОБОРУДОВАНИЕ
+            </div>
+            <h2 class="gym-headline">
+              ИНДУСТРИАЛЬНЫЙ<br>
+              МАСШТАБ.<br>
+              <span class="text-crimson">БЕЗ КОМПРОМИССОВ.</span>
+            </h2>
+            <p class="gym-description">
+              JOHN GYM — пространство для серьёзной работы.<br>
+              Свободные веса, силовые рамы и оборудование для полноценных тренировок.
+            </p>
+            <button type="button" class="btn btn-crimson-solid" id="gym-test-visit-btn" data-open-modal="test-visit">
+              <span>ТЕСТОВЫЙ ВИЗИТ</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="gym-media-col">
+            <img 
+              src="/images/gym_equipment.jpg" 
+              alt="Оборудование и силовые рамы зала JOHN GYM" 
+              class="gym-media-img gym-media-img-equipment"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- ROW 2 — COACHING AND ATMOSPHERE -->
+        <div class="gym-row reverse-row" id="coaches">
+          <div class="gym-media-col">
+            <img 
+              src="/images/gym_coaches.jpg" 
+              alt="Тренерский штаб атлетического клуба JOHN GYM" 
+              class="gym-media-img"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gym-text-col">
+            <div class="section-tag">
+              <span class="tag-bar"></span>
+              ТРЕНЕРСКИЙ ШТАБ
+            </div>
+            <h2 class="gym-headline">
+              СИСТЕМА<br>
+              НАСТАВНИЧЕСТВА.
+            </h2>
+            <p class="gym-description">
+              Индивидуальный подход, контроль техники и последовательная работа над результатом.
+            </p>
+            <button type="button" class="btn btn-border-coach" id="gym-choose-coach-btn" data-open-modal="coach">
+              <span>ВЫБРАТЬ НАСТАВНИКА</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 04 — SCHEDULE & LOCATION
+         Split-Screen: Verified Contacts/Schedule & Dark Desaturated Map
+         ======================================================================= -->
+    <section class="location-section noise-texture" id="location">
+      <div class="location-container">
+        <!-- Left Column: Details & Schedule -->
+        <div class="location-info-col">
+          <div class="section-tag">
+            <span class="tag-bar"></span>
+            <span class="tag-num">04</span> // ЛОКАЦИЯ
+          </div>
+          
+          <h2 class="location-headline">
+            РЕЖИМ БАЗЫ.<br>
+            <span class="text-crimson">ВСЕГДА В СТРОЮ.</span>
+          </h2>
+
+          <div class="location-contact-list">
+            <div class="location-contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Шымкент, ул. Толе би, 12В</span>
+            </div>
+
+            <div class="location-contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+77053457007">+7 (705) 345-70-07</a>
+            </div>
+          </div>
+
+          <!-- Schedule table with horizontal dividers -->
+          <div class="schedule-table">
+            <div class="schedule-row">
+              <span class="schedule-day">ПН — СБ</span>
+              <span class="schedule-time">09:00 — 23:00</span>
+            </div>
+            <div class="schedule-row">
+              <span class="schedule-day">ВОСКРЕСЕНЬЕ</span>
+              <span class="schedule-time">09:00 — 22:00</span>
+            </div>
+          </div>
+
+          <a 
+            href="https://2gis.kz/shymkent/search/%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82%2C%20%D1%83%D0%BB.%20%D0%A2%D0%BE%D0%BB%D0%B5%20%D0%B1%D0%B8%2C%2012%D0%92" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-location-map"
+            id="location-2gis-cta"
+          >
+            <span>ОТКРЫТЬ В 2GIS / КАРТАХ</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Right Column: Quiet Desaturated Map with Pulsing #FC541E Pin -->
+        <a 
+          href="https://2gis.kz/shymkent/search/%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82%2C%20%D1%83%D0%BB.%20%D0%A2%D0%BE%D0%BB%D0%B5%20%D0%B1%D0%B8%2C%2012%D0%92" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="location-map-col" 
+          id="location-map-interactive"
+          aria-label="Открыть расположение JOHN GYM в 2GIS"
+        >
+          <img src="/images/map_bg.jpg" alt="Карта района улицы Толе би в Шымкенте" class="map-background-img" loading="lazy">
+          <div class="map-grid-overlay" aria-hidden="true"></div>
+          <div class="map-radar-pulse" aria-hidden="true"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 05 — MEMBERSHIPS
+         Three-Column Pricing Grid & Discount Strip
+         ======================================================================= -->
+    <section class="memberships-section noise-texture" id="memberships">
+      <div class="memberships-container">
+        <!-- Section Header -->
+        <div class="memberships-header">
+          <div class="section-tag">
+            <span class="tag-bar"></span>
+            <span class="tag-num">05</span> // АБОНЕМЕНТЫ
+          </div>
+          <h2 class="memberships-headline">
+            ВЫБЕРИ СВОЙ <span class="text-crimson">ВХОД В СИСТЕМУ.</span>
+          </h2>
+          <p class="memberships-subtitle">
+            Никаких скрытых платежей. Доступ ко всем зонам базы и вводный инструктаж включены.
+          </p>
+        </div>
+
+        <!-- Pricing Grid -->
+        <div class="pricing-grid">
+          
+          <!-- Card 01: BASIC -->
+          <article class="pricing-card" id="pricing-card-basic">
+            <div class="pricing-card-media">
+              <img src="/images/mem_basic.jpg" alt="Базовый курс тренировок" class="pricing-card-img" loading="lazy">
+            </div>
+            <div class="pricing-card-body">
+              <h3 class="pricing-card-title">БАЗОВЫЙ КУРС</h3>
+              <div class="pricing-card-price-wrap">
+                <span class="pricing-card-price">12 000 ₸</span>
+                <span class="pricing-card-duration">/ 12 ТРЕНИРОВОК</span>
+              </div>
+              <ul class="pricing-card-features">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>12 визитов в течение 30 дней</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Доступ в зону свободных весов и тренажёров</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Раздевалка и душевая</span>
+                </li>
+              </ul>
+              <button type="button" class="btn btn-outline" data-open-modal="basic" data-plan="БАЗОВЫЙ КУРС — 12 000 ₸">
+                <span>ОФОРМИТЬ КАРТУ</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 02: UNLIMITED (Featured Plan) -->
+          <article class="pricing-card featured-card" id="pricing-card-unlimited">
+            <div class="featured-badge">ХИТ ПРОДАЖ · БЕЗЛИМИТ</div>
+            <div class="pricing-card-media">
+              <img src="/images/mem_unlimited.jpg" alt="Безлимитный абонемент Unlimited Athlete" class="pricing-card-img" loading="lazy">
+            </div>
+            <div class="pricing-card-body">
+              <h3 class="pricing-card-title">UNLIMITED ATHLETE</h3>
+              <div class="pricing-card-price-wrap">
+                <span class="pricing-card-price">15 000 ₸</span>
+                <span class="pricing-card-duration">/ 1 МЕСЯЦ БЕЗЛИМИТА</span>
+              </div>
+              <ul class="pricing-card-features">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Неограниченное количество посещений (Пн–Вс)</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Вводная калибровка и разбор техники с тренером</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Персональный шкафчик и доступ к кардио-сектору</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Заморозка абонемента до 7 дней</span>
+                </li>
+              </ul>
+              <button type="button" class="btn btn-primary" data-open-modal="unlimited" data-plan="UNLIMITED ATHLETE — 15 000 ₸">
+                <span>КУПИТЬ АБОНЕМЕНТ</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 03: SINGLE VISIT -->
+          <article class="pricing-card" id="pricing-card-single">
+            <div class="pricing-card-media">
+              <img src="/images/mem_single.jpg" alt="Тестовый разовый визит в зал" class="pricing-card-img" loading="lazy">
+            </div>
+            <div class="pricing-card-body">
+              <h3 class="pricing-card-title">ТЕСТОВЫЙ / РАЗОВЫЙ</h3>
+              <div class="pricing-card-price-wrap">
+                <span class="pricing-card-price">2 000 ₸</span>
+                <span class="pricing-card-duration">/ 1 ВИЗИТ</span>
+              </div>
+              <ul class="pricing-card-features">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Разовый полный доступ ко всей инфраструктуре</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Консультация дежурного тренера</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Действует в любой день работы базы</span>
+                </li>
+              </ul>
+              <button type="button" class="btn btn-outline" data-open-modal="single" data-plan="ТЕСТОВЫЙ / РАЗОВЫЙ — 2 000 ₸">
+                <span>КУПИТЬ ВИЗИТ</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Bottom Discount Strip -->
+        <div class="discount-strip">
+          <div class="discount-badge" aria-hidden="true">%</div>
+          <div class="discount-content">
+            <span class="discount-label">ЛЬГОТНЫЕ ТАРИФЫ:</span>
+            <span class="discount-items">
+              Студенческий — 10 000 ₸ &nbsp;·&nbsp; Школьный — 9 000 ₸ &nbsp;·&nbsp; Пенсионный — 5 000 ₸
+            </span>
+            <span class="discount-note">(при предъявлении удостоверения).</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer noise-texture">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand">JOHN <span class="brand-accent">GYM</span></div>
+          <p class="footer-tagline">
+            Премиальный атлетический клуб и тренировочная база для серьёзной работы над формой и силой. Шымкент.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">НАВИГАЦИЯ</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Главная</a></li>
+            <li><a href="#programs">Программы</a></li>
+            <li><a href="#gym">Зал и оборудование</a></li>
+            <li><a href="#coaches">Тренерский штаб</a></li>
+            <li><a href="#memberships">Абонементы</a></li>
+            <li><a href="#location">Локация и часы</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">РЕЖИМ РАБОТЫ</h4>
+          <div class="footer-contact-items">
+            <p><strong>ПН — СБ:</strong> 09:00 — 23:00</p>
+            <p><strong>ВОСКРЕСЕНЬЕ:</strong> 09:00 — 22:00</p>
+            <p style="margin-top: 8px;">Без перерывов и выходных</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">КОНТАКТЫ</h4>
+          <div class="footer-contact-items">
+            <p>г. Шымкент, ул. Толе би, 12В</p>
+            <p><a href="tel:+77053457007">+7 (705) 345-70-07</a></p>
+            <p><a href="https://instagram.com/john_gym777" target="_blank" rel="noopener noreferrer">Instagram: @john_gym777</a></p>
+            <p><a href="https://wa.me/77053457007" target="_blank" rel="noopener noreferrer">WhatsApp: +7 705 345 70 07</a></p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">ПРАВОВАЯ ИНФОРМАЦИЯ</h4>
+          <ul class="footer-links">
+            <li><button type="button" class="footer-legal-btn" data-open-legal="privacy">Политика конфиденциальности</button></li>
+            <li><button type="button" class="footer-legal-btn" data-open-legal="consent">Согласие на сбор и обработку ПД</button></li>
+            <li><button type="button" class="footer-legal-btn" data-open-legal="terms">Правила клуба и оферта</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-entity-info">
+          <p class="footer-entity-headline">Исполнитель услуг / Оператор базы данных:</p>
+          <p>Спортивный клуб «JOHN GYM» (ИП / ТОО [требуется указание юридического лица]) · БИН/ИИН: [требуется подтверждение владельца]</p>
+          <p>г. Шымкент, ул. Толе би, 12В · Серверы хранения персональных данных: Республика Казахстан (ст. 12 Закона РК № 94-V)</p>
+          <p>Отзыв согласий и обращения по персональным данным: <a href="tel:+77053457007">+7 (705) 345-70-07</a> · <a href="https://wa.me/77053457007" target="_blank" rel="noopener noreferrer">WhatsApp Администратора</a></p>
+        </div>
+        <div class="footer-copyright-meta">
+          <p>© 2026 JOHN GYM. Все права защищены. Шымкент, Казахстан.</p>
+          <p>ATHLETIC PERFORMANCE DIVISION · 2026</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INQUIRY & MEMBERSHIP MODAL
+       Honest inquiry flow with WhatsApp & Direct Phone actions
+       ========================================================================= -->
+  <div class="modal-backdrop" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="Закрыть модальное окно">×</button>
+      
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">ЗАЯВКА НА ТРЕНИРОВКУ</h3>
+        <p class="modal-desc" id="modal-desc">
+          Оставьте контакты для связи с администратором или напишите напрямую в WhatsApp.
+        </p>
+      </div>
+
+      <form id="inquiry-form">
+        <div class="form-group">
+          <label for="form-plan" class="form-label">Выбранный тариф / Цель</label>
+          <select id="form-plan" class="form-select">
+            <option value="UNLIMITED ATHLETE — 15 000 ₸">UNLIMITED ATHLETE — 15 000 ₸ / месяц</option>
+            <option value="БАЗОВЫЙ КУРС — 12 000 ₸">БАЗОВЫЙ КУРС — 12 000 ₸ / 12 занятий</option>
+            <option value="ТЕСТОВЫЙ / РАЗОВЫЙ — 2 000 ₸">ТЕСТОВЫЙ / РАЗОВЫЙ — 2 000 ₸</option>
+            <option value="ТЕСТОВЫЙ ВИЗИТ В ЗАЛ">ТЕСТОВЫЙ ВИЗИТ В ЗАЛ</option>
+            <option value="ПОДБОР НАСТАВНИКА">ПОДБОР НАСТАВНИКА</option>
+            <option value="ЛЬГОТНЫЙ ТАРИФ">ЛЬГОТНЫЙ ТАРИФ (Студент / Школьник / Пенсионер)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="form-name" class="form-label">Ваше имя</label>
+          <input type="text" id="form-name" class="form-input" placeholder="Алексей" required>
+        </div>
+
+        <div class="form-group">
+          <label for="form-phone" class="form-label">Номер телефона</label>
+          <input type="tel" id="form-phone" class="form-input" placeholder="+7 (705) 000-00-00" required>
+        </div>
+
+        <div class="form-group form-consent-group">
+          <label class="consent-checkbox-label" for="form-consent">
+            <input type="checkbox" id="form-consent" class="consent-checkbox" required>
+            <span class="consent-text">
+              Я даю <button type="button" class="legal-inline-btn" data-open-legal="consent">согласие на сбор и обработку персональных данных</button> и ознакомлен(а) с <button type="button" class="legal-inline-btn" data-open-legal="privacy">Политикой конфиденциальности</button>
+            </span>
+          </label>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary" id="modal-submit-btn">
+            <span>ОТПРАВИТЬ ЗАЯВКУ</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+          
+          <a href="#" class="btn btn-whatsapp" id="modal-whatsapp-link" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>НАПИСАТЬ В WHATSAPP</span>
+          </a>
+        </div>
+      </form>
+
+      <!-- Success notification state inside dialog -->
+      <div class="modal-success-state" id="modal-success-state">
+        <div class="modal-success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="modal-title">ЗАЯВКА ПРИНЯТА</h3>
+        <p class="modal-desc">
+          Спасибо! Администратор JOHN GYM свяжется с вами в течение 10 минут для подтверждения.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       LEGAL COMPLIANCE MODAL (Казахстан — Закон № 94-V, Закон № 274-IV)
+       Privacy Policy, Consent & Club Terms / Public Offer
+       ========================================================================= -->
+  <div class="modal-backdrop legal-modal-backdrop" id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+    <div class="modal-dialog legal-modal-dialog">
+      <button type="button" class="modal-close" id="legal-modal-close-btn" aria-label="Закрыть правовую информацию">×</button>
+      
+      <div class="legal-modal-header">
+        <div class="section-tag" style="margin-bottom: 8px;">
+          <span class="tag-bar"></span>
+          ПРАВОВАЯ ИНФОРМАЦИЯ // КАЗАХСТАН
+        </div>
+        <h3 class="modal-title" id="legal-modal-title">ДОКУМЕНТЫ И УСЛОВИЯ</h3>
+      </div>
+
+      <!-- Legal Navigation Tabs -->
+      <div class="legal-tabs" role="tablist" aria-label="Юридические разделы">
+        <button type="button" class="legal-tab active" role="tab" aria-selected="true" id="tab-legal-privacy" data-legal-tab="privacy">
+          Политика конфиденциальности
+        </button>
+        <button type="button" class="legal-tab" role="tab" aria-selected="false" id="tab-legal-consent" data-legal-tab="consent">
+          Согласие на обработку ПД
+        </button>
+        <button type="button" class="legal-tab" role="tab" aria-selected="false" id="tab-legal-terms" data-legal-tab="terms">
+          Правила клуба и оферта
+        </button>
+      </div>
+
+      <!-- Scrollable Legal Documents Container -->
+      <div class="legal-content-scroll" tabindex="0">
+        
+        <!-- Document 1: Privacy Policy -->
+        <article class="legal-doc-section active" id="legal-panel-privacy" role="tabpanel" aria-labelledby="tab-legal-privacy">
+          <h4>ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ</h4>
+          <p class="legal-meta-note">Редакция действует с января 2026 года · В соответствии с Законом Республики Казахстан от 21 мая 2013 года № 94-V «О персональных данных и их защите»</p>
+          
+          <h5>1. Общие положения</h5>
+          <p>
+            Настоящая Политика определяет порядок сбора, обработки, накопления, хранения и защиты персональных данных пользователей сайта спортивного клуба <strong>JOHN GYM</strong> (далее — «Оператор»), расположенного по адресу: Республика Казахстан, г. Шымкент, ул. Толе би, 12В.
+          </p>
+          
+          <h5>2. Категории собираемых данных</h5>
+          <p>
+            Оператор осуществляет сбор исключительно минимально необходимых данных, предоставляемых пользователем добровольно при заполнении веб-формы:
+          </p>
+          <ul>
+            <li>Имя пользователя;</li>
+            <li>Контактный номер телефона;</li>
+            <li>Выбранный тариф, услуга или тема обращения;</li>
+            <li>Технические обезличенные сведения (cookies сессии, тип устройства, необходимые для стабильной работы интерфейса).</li>
+          </ul>
+
+          <h5>3. Цели сбора и обработки</h5>
+          <p>
+            Сбор персональных данных осуществляется строго для:
+          </p>
+          <ul>
+            <li>Обработки входящих заявок и обратной связи с администратором клуба;</li>
+            <li>Консультирования по услугам, подбора тренера и записи на пробный визит;</li>
+            <li>Оформления клубных карт и резервирования абонементов;</li>
+            <li>Предотвращения спама и защиты технической инфраструктуры сайта.</li>
+          </ul>
+
+          <h5>4. Правовое основание обработки</h5>
+          <p>
+            Обработка персональных данных осуществляется на основании согласия субъекта персональных данных (ст. 8 Закона РК «О персональных данных и их защите»), предоставляемого путем проставления соответствующей отметки в форме заявки.
+          </p>
+
+          <h5>5. Локализация баз данных в Республике Казахстан</h5>
+          <p>
+            В соответствии со <strong>статьей 12 Закона РК «О персональных данных и их защите»</strong>, накопление и хранение баз данных, содержащих персональные данные пользователей, осуществляется на электронных носителях и серверах, физически находящихся в пределах Республики Казахстан. Трансграничная передача персональных данных без прямого согласия субъекта не осуществляется.
+          </p>
+
+          <h5>6. Сроки хранения и безопасность</h5>
+          <p>
+            Персональные данные хранятся не дольше, чем это необходимо для выполнения целей сбора, либо до момента отзыва согласия субъектом. Оператор применяет организационные и технические меры для защиты данных от неправомерного доступа, изменения или уничтожения.
+          </p>
+
+          <h5>7. Права субъекта и отзыв согласия</h5>
+          <p>
+            Субъект персональных данных имеет право на доступ к своим данным, требование их уточнения, блокирования или уничтожения. Для отзыва согласия или запроса вы можете обратиться к администратору клуба:
+          </p>
+          <p>
+            Телефон: <a href="tel:+77053457007">+7 (705) 345-70-07</a> · WhatsApp: <a href="https://wa.me/77053457007" target="_blank" rel="noopener noreferrer">+7 705 345 70 07</a> · г. Шымкент, ул. Толе би, 12В.
+          </p>
+        </article>
+
+        <!-- Document 2: User Consent Text -->
+        <article class="legal-doc-section" id="legal-panel-consent" role="tabpanel" aria-labelledby="tab-legal-consent">
+          <h4>СОГЛАСИЕ НА СБОР И ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ</h4>
+          <p class="legal-meta-note">Форма согласия в соответствии со статьей 8 Закона РК «О персональных данных и их защите»</p>
+          
+          <p>
+            Настоящим, заполняя и отправляя электронную форму на сайте <strong>JOHN GYM</strong>, я даю свое добровольное, осознанное и безусловное согласие Оператору (спортивный клуб JOHN GYM, г. Шымкент, ул. Толе би, 12В) на сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование и уничтожение моих персональных данных:
+          </p>
+          <ul>
+            <li>Имя;</li>
+            <li>Номер телефона;</li>
+            <li>Сведения о выбранном абонементе/услуге.</li>
+          </ul>
+
+          <h5>Условия и цели согласия:</h5>
+          <ul>
+            <li>Согласие дается для целей оперативной связи администратора, уточнения деталей тренировочного процесса, подтверждения записи на тестовый визит и согласования наставника;</li>
+            <li>Оператор гарантирует конфиденциальность и обязуется не распространять и не передавать данные третьим лицам без законных оснований;</li>
+            <li>База данных хранится на территории Республики Казахстан в соответствии с требованиями законодательства РК;</li>
+            <li>Настоящее согласие действует с момента отправки заявки до момента достижения заявленных целей либо до его отзыва.</li>
+          </ul>
+
+          <p>
+            Я подтверждаю, что проинформирован(а) о праве отозвать настоящее согласие в любое время путем направления соответствующего уведомления по контактному номеру: <strong>+7 (705) 345-70-07</strong>.
+          </p>
+        </article>
+
+        <!-- Document 3: Club Rules and Public Offer -->
+        <article class="legal-doc-section" id="legal-panel-terms" role="tabpanel" aria-labelledby="tab-legal-terms">
+          <h4>ПРАВИЛА ПОСЕЩЕНИЯ КЛУБА И ПУБЛИЧНАЯ ОФЕРТА</h4>
+          <p class="legal-meta-note">Регулируется Гражданским кодексом РК и Законом РК «О защите прав потребителей» от 04 мая 2010 года № 274-IV</p>
+          
+          <h5>1. Предмет оферты</h5>
+          <p>
+            Настоящий документ является публичной офертой спортивного клуба JOHN GYM. Предметом является предоставление физкультурно-оздоровительных услуг, обеспечение доступа к тренажерному залу, кардио-зоне и оборудованию базы по адресу: г. Шымкент, ул. Толе би, 12В.
+          </p>
+
+          <h5>2. Стоимость услуг и правила тарифов</h5>
+          <p>
+            Все цены на сайте зафиксированы в национальной валюте Республики Казахстан — тенге (₸):
+          </p>
+          <ul>
+            <li><strong>UNLIMITED ATHLETE:</strong> 15 000 ₸ / 1 месяц безлимитного посещения. Включает право заморозки абонемента на срок до 7 дней при предварительном уведомлении администратора;</li>
+            <li><strong>БАЗОВЫЙ КУРС:</strong> 12 000 ₸ / 12 занятий со сроком действия 30 календарных дней;</li>
+            <li><strong>ТЕСТОВЫЙ / РАЗОВЫЙ ВИЗИТ:</strong> 2 000 ₸ за разовое посещение в часы работы клуба;</li>
+            <li><strong>ЛЬГОТНЫЕ ТАРИФЫ:</strong> Студенческий (10 000 ₸), Школьный (9 000 ₸), Пенсионный (5 000 ₸) — оформляются на рецепции при предъявлении подтверждающего документа.</li>
+          </ul>
+
+          <h5>3. Порядок оплаты и фискализация</h5>
+          <p>
+            Заявка на сайте является предварительным бронированием. Оплата услуг осуществляется на рецепции клуба либо через авторизованные платежные сервисы с обязательной выдачей фискального чека контрольно-кассовой машины (ККМ).
+          </p>
+
+          <h5>4. Расторжение договора и возврат средств</h5>
+          <p>
+            В соответствии со статьями 8-1 и 24 Закона РК «О защите прав потребителей», потребитель вправе отказаться от исполнения договора в любое время при условии оплаты исполнителю фактически понесенных им расходов. Возврат денежных средств за неиспользованные дни/занятия абонемента рассчитывается пропорционально остатку срока действия карты.
+          </p>
+
+          <h5>5. Медицинский допуск и техника безопасности</h5>
+          <p>
+            Посетитель подтверждает, что не имеет медицинских противопоказаний, препятствующих занятиям силовыми видами спорта, и принимает личную ответственность за свое здоровье. Посетитель обязуется бережно относиться к спортивному инвентарю и строго соблюдать правила техники безопасности при выполнении упражнений.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="legal-modal-footer">
+        <button type="button" class="btn btn-outline" id="legal-modal-close-action">
+          <span>ПОНЯТНО / ЗАКРЫТЬ</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Main client-side script -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

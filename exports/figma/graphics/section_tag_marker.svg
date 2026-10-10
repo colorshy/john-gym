@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 24" width="160" height="24" fill="none">
+  <!-- Athletic Section Tag (e.g. // 01 ПРОГРАММЫ) -->
+  <rect x="0" y="4" width="3" height="16" fill="#FC541E"/>
+  <text x="12" y="17" font-family="'Inter', -apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="0.14em" fill="#FAF9F6">
+    <tspan fill="#FC541E">01</tspan> // ПРОГРАММЫ
+  </text>
+</svg>
