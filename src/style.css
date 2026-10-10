@@ -744,22 +744,14 @@ button {
 }
 
 .exercise-num {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #F0E2D0;
-  display: inline-block;
-  padding-bottom: 2px;
-  border-bottom: 2px solid var(--color-sweet-cherry);
-  margin-bottom: 6px;
+  display: none;
 }
 
 .exercise-title {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #F0E2D0;
 }

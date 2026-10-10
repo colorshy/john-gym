@@ -174,7 +174,6 @@ function renderExerciseCards() {
         <div class="exercise-card-overlay"></div>
       </div>
       <div class="exercise-card-top">
-        <span class="exercise-num">${item.index} //</span>
         <h3 class="exercise-title">${item.title}</h3>
       </div>
       <div class="exercise-card-content">
