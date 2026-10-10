@@ -19,12 +19,13 @@
   <header class="site-header" id="site-header">
     <div class="nav-container">
       <a href="#hero" class="brand-mark" id="nav-brand" aria-label="JOHN GYM Главная">
-        <span class="brand-john">JOHN GYM</span>
+        <span class="brand-john">JOHN</span>
+        <span class="brand-gym">GYM</span>
       </a>
 
       <nav aria-label="Основная навигация">
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#programs" class="nav-link" id="nav-link-programs">ПРОГРАММЫ</a></li>
+          <li><a href="#programs" class="nav-link active" id="nav-link-programs">ПРОГРАММЫ</a></li>
           <li><a href="#gym" class="nav-link" id="nav-link-gym">ЗАЛ</a></li>
           <li><a href="#gym" class="nav-link" id="nav-link-trainers">ТРЕНЕРЫ</a></li>
           <li><a href="#memberships" class="nav-link" id="nav-link-memberships">АБОНЕМЕНТЫ</a></li>
@@ -108,15 +109,15 @@
           <div class="programs-tabs" role="tablist" aria-label="Категории тренировок">
             <button type="button" class="program-tab active" role="tab" aria-selected="true" id="tab-strength" data-category="strength">
               <span class="program-tab-title">Силовые тренировки</span>
-              <span class="program-tab-sub">РАЗВИТИЕ СИЛЫ</span>
+              <span class="program-tab-sub">[РАЗВИТИЕ СИЛЫ]</span>
             </button>
             <button type="button" class="program-tab" role="tab" aria-selected="false" id="tab-balance" data-category="balance">
               <span class="program-tab-title">Баланс и контроль</span>
-              <span class="program-tab-sub">СТАБИЛЬНОСТЬ</span>
+              <span class="program-tab-sub">[СТАБИЛЬНОСТЬ]</span>
             </button>
             <button type="button" class="program-tab" role="tab" aria-selected="false" id="tab-endurance" data-category="endurance">
               <span class="program-tab-title">Выносливость</span>
-              <span class="program-tab-sub">РАЗВИТИЕ ВЫНОСЛИВОСТИ</span>
+              <span class="program-tab-sub">[РАЗВИТИЕ ВЫНОСЛИВОСТИ]</span>
             </button>
           </div>
         </div>
@@ -126,13 +127,13 @@
           <div class="programs-cards-grid" id="exercise-cards-container">
             
             <!-- Card 01: Squats -->
-            <article class="exercise-card" data-index="1" id="exercise-card-1" tabindex="0">
+            <article class="exercise-card" data-index="0" id="exercise-card-1" tabindex="0">
               <div class="exercise-card-media">
                 <img src="/images/exercise_squat.jpg" alt="Приседания со штангой" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <span class="exercise-num">01</span>
+                <span class="exercise-num">01 //</span>
                 <h3 class="exercise-title">ПРИСЕДАНИЯ</h3>
               </div>
               <div class="exercise-card-content">
@@ -140,30 +141,29 @@
                 <div class="exercise-meta-bar">
                   <div class="exercise-stats">
                     <div class="exercise-stat-item">
-                      <span class="exercise-stat-label">подходы</span>
+                      <span class="exercise-stat-label">ПОДХОДЫ:</span>
                       <span class="exercise-stat-value">4</span>
                     </div>
                     <div class="exercise-stat-item">
-                      <span class="exercise-stat-label">повторы</span>
-                      <span class="exercise-stat-value">8</span>
+                      <span class="exercise-stat-label">ПОВТОРЫ:</span>
+                      <span class="exercise-stat-value">10</span>
                     </div>
                   </div>
                   <div class="exercise-actions">
-                    <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="Приседания" aria-label="Добавить приседания">+</button>
-                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="Приседания">В МОЮ ПРОГРАММУ</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="ПРИСЕДАНИЯ">[ + В МОЮ ПРОГРАММУ ]</button>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- Card 02: Dumbbell Row (Active Featured Card) -->
-            <article class="exercise-card active-card" data-index="2" id="exercise-card-2" tabindex="0">
+            <article class="exercise-card active-card" data-index="1" id="exercise-card-2" tabindex="0">
               <div class="exercise-card-media">
                 <img src="/images/exercise_row.jpg" alt="Тяга гантели в наклоне" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <span class="exercise-num">02</span>
+                <span class="exercise-num">02 //</span>
                 <h3 class="exercise-title">ТЯГА ГАНТЕЛИ</h3>
               </div>
               <div class="exercise-card-content">
@@ -171,30 +171,29 @@
                 <div class="exercise-meta-bar">
                   <div class="exercise-stats">
                     <div class="exercise-stat-item">
-                      <span class="exercise-stat-label">подходы</span>
+                      <span class="exercise-stat-label">ПОДХОДЫ:</span>
                       <span class="exercise-stat-value">4</span>
                     </div>
                     <div class="exercise-stat-item">
-                      <span class="exercise-stat-label">повторы</span>
+                      <span class="exercise-stat-label">ПОВТОРЫ:</span>
                       <span class="exercise-stat-value">10</span>
                     </div>
                   </div>
                   <div class="exercise-actions">
-                    <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="Тяга гантели" aria-label="Добавить тягу гантели">+</button>
-                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="Тяга гантели">В МОЮ ПРОГРАММУ</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="ТЯГА ГАНТЕЛИ">[ + В МОЮ ПРОГРАММУ ]</button>
                   </div>
                 </div>
               </div>
             </article>
 
             <!-- Card 03: Bicep Curl -->
-            <article class="exercise-card" data-index="3" id="exercise-card-3" tabindex="0">
+            <article class="exercise-card" data-index="2" id="exercise-card-3" tabindex="0">
               <div class="exercise-card-media">
                 <img src="/images/exercise_biceps.jpg" alt="Сгибания на бицепс" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <span class="exercise-num">03</span>
+                <span class="exercise-num">03 //</span>
                 <h3 class="exercise-title">СГИБАНИЯ НА БИЦЕПС</h3>
               </div>
               <div class="exercise-card-content">
@@ -202,17 +201,16 @@
                 <div class="exercise-meta-bar">
                   <div class="exercise-stats">
                     <div class="exercise-stat-item">
-                      <span class="exercise-stat-label">подходы</span>
-                      <span class="exercise-stat-value">3</span>
+                      <span class="exercise-stat-label">ПОДХОДЫ:</span>
+                      <span class="exercise-stat-value">4</span>
                     </div>
                     <div class="exercise-stat-item">
-                      <span class="exercise-stat-label">повторы</span>
-                      <span class="exercise-stat-value">12</span>
+                      <span class="exercise-stat-label">ПОВТОРЫ:</span>
+                      <span class="exercise-stat-value">10</span>
                     </div>
                   </div>
                   <div class="exercise-actions">
-                    <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="Сгибания на бицепс" aria-label="Добавить сгибания на бицепс">+</button>
-                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="Сгибания на бицепс">В МОЮ ПРОГРАММУ</button>
+                    <button type="button" class="btn-add-program add-to-routine-btn" data-exercise="СГИБАНИЯ НА БИЦЕПС">[ + В МОЮ ПРОГРАММУ ]</button>
                   </div>
                 </div>
               </div>
@@ -223,10 +221,9 @@
 
         <!-- Programs Bottom Action -->
         <div class="programs-bottom">
-          <p class="programs-bottom-label">СОБЕРИ СВОЮ ТРЕНИРОВКУ С JOHN GYM</p>
           <a href="#memberships" class="programs-bottom-link" id="programs-builder-cta">
-            <span>Создать программу тренировок</span>
-            <span aria-hidden="true">→</span>
+            <span class="programs-bottom-label">СОБЕРИ СВОЮ ТРЕНИРОВКУ С JOHN GYM // </span>
+            <span class="programs-bottom-action">Создать программу тренировок →</span>
           </a>
         </div>
       </div>

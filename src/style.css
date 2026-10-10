@@ -11,10 +11,10 @@
 
 :root {
   /* 4 Brand Hex Codes */
-  --color-black-safflower: #141414;
+  --color-black-safflower: #111111;
   --color-chanterelle:     #DEA81C;
-  --color-wild-oats:       #E9D8BE;
-  --color-sweet-cherry:    #821630;
+  --color-wild-oats:       #ECDCC4;
+  --color-sweet-cherry:    #8E1533;
 
   /* Semantic Roles for Hero Redesign */
   --color-hero-bg:         #000000;                      /* Глубокий темный фон по референсу */
@@ -43,10 +43,10 @@
   --color-text-dim:        rgba(236, 220, 196, 0.48);
   
   /* Programs tokens */
-  --color-programs-bg: #FFF2EE;
-  --color-programs-text: #141414;
-  --color-programs-muted: #8C929D;
-  --color-programs-card-bg: #141414;
+  --color-programs-bg:     var(--color-wild-oats);
+  --color-programs-text:   #111111;
+  --color-programs-muted:  #6E6860;
+  --color-programs-card-bg: #121214;
   --color-programs-border: rgba(255, 255, 255, 0.12);
 
   --font-display: 'Oswald', 'Bebas Neue', 'Anton', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -258,15 +258,14 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   user-select: none;
-  color: #141414;
 }
 
 .brand-john {
-  color: #141414;
+  color: #111111;
 }
 
 .brand-gym {
-  color: #141414;
+  color: #8E1533;
 }
 
 .nav-menu {
@@ -297,6 +296,15 @@ button {
   height: 2px;
   background-color: var(--color-sweet-cherry);
   transition: width var(--transition-fast);
+}
+
+.nav-link.active {
+  color: var(--color-black-safflower);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background-color: var(--color-sweet-cherry);
 }
 
 .nav-link:hover {
@@ -556,72 +564,78 @@ button {
 
 /* ==========================================================================
    SECTION 02 — PROGRAMS
-   Deep obsidian background, elevated dark slate cards, crimson accents
+   Solid warm oat beige (#ECDCC4 / Wild Oats) canvas, chiaroscuro strength cards, Swiss grid
    ========================================================================== */
 .programs-section {
   background-color: var(--color-wild-oats);
-  color: #141414;
-  padding: 80px 5vw 100px;
+  color: #111111;
+  min-height: 100vh;
+  padding: 100px 5vw 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .programs-container {
-  max-width: 1600px;
+  width: 100%;
+  max-width: 1680px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .programs-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 32px;
-  gap: 40px;
+  margin-bottom: 24px;
+  gap: 36px;
 }
 
 .programs-title {
   font-family: var(--font-heading);
-  font-size: clamp(38px, 4.2vw, 66px);
+  font-size: clamp(38px, 4.4vw, 68px);
   font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
+  line-height: 0.94;
+  letter-spacing: -0.015em;
   text-transform: uppercase;
+  color: #111111;
 }
 
-.programs-title-black {
-  color: #141414;
-}
-
+.programs-title-black,
 .programs-title-charcoal {
-  color: #141414;
+  color: #111111;
 }
 
 .programs-tabs {
   display: flex;
-  gap: 36px;
+  gap: 32px;
 }
 
 .program-tab {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 2px solid transparent;
-  color: #706A62;
   text-align: left;
   background: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
   cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
 .program-tab-title {
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #141414;
+  color: #4A4640;
+  transition: color var(--transition-fast);
 }
 
 .program-tab-sub {
@@ -630,8 +644,9 @@ button {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #706A62;
+  color: #7E7870;
   margin-top: 3px;
+  transition: color var(--transition-fast);
 }
 
 .program-tab.active {
@@ -639,7 +654,7 @@ button {
 }
 
 .program-tab.active .program-tab-title {
-  color: #141414;
+  color: #111111;
 }
 
 .program-tab.active .program-tab-sub {
@@ -649,32 +664,33 @@ button {
 /* Exercise Cards / Carousel */
 .programs-carousel-wrap {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .programs-cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1.35fr 1fr;
+  grid-template-columns: 1fr 1.32fr 1fr;
   gap: 24px;
   align-items: center;
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .exercise-card {
   position: relative;
-  background-color: #121214;
+  background-color: #0E0E10;
   color: #F0E2D0;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
   overflow: hidden;
-  height: 480px;
+  height: 520px;
   cursor: pointer;
-  opacity: 0.82;
+  opacity: 0.85;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
   transition: all var(--transition-smooth);
 }
 
 .exercise-card:hover {
-  opacity: 0.95;
+  opacity: 0.96;
   transform: translateY(-4px);
 }
 
@@ -689,8 +705,8 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
-  filter: brightness(0.82) contrast(1.05);
+  object-position: center 20%;
+  filter: saturate(0.60) contrast(1.18) brightness(0.84);
   transition: transform var(--transition-smooth);
 }
 
@@ -701,7 +717,13 @@ button {
 .exercise-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 10, 12, 0.96) 0%, rgba(10, 10, 12, 0.52) 45%, rgba(10, 10, 12, 0.15) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 12, 0.97) 0%,
+    rgba(10, 10, 12, 0.60) 42%,
+    rgba(10, 10, 12, 0.18) 75%,
+    rgba(10, 10, 12, 0.35) 100%
+  );
 }
 
 .exercise-card-content {
@@ -725,6 +747,7 @@ button {
   font-family: var(--font-display);
   font-size: 26px;
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: #F0E2D0;
   display: inline-block;
   padding-bottom: 2px;
@@ -734,31 +757,31 @@ button {
 
 .exercise-title {
   font-family: var(--font-heading);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #F0E2D0;
 }
 
-/* Active exercise card: scale-105, full opacity, distinct red glowing border */
+/* Active exercise card: razor-sharp 2px #8E1533 border, scale-103, elevated chiaroscuro depth */
 .exercise-card.active-card {
   opacity: 1 !important;
-  transform: scale(1.04);
+  transform: scale(1.03);
   border: 2px solid var(--color-sweet-cherry);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 28px rgba(130, 22, 48, 0.45);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 24px rgba(142, 21, 51, 0.35);
   z-index: 5;
 }
 
 .exercise-card.active-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .exercise-instruction {
   font-size: 13.5px;
   line-height: 1.5;
   color: #A0A5AF;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   max-width: 480px;
 }
 
@@ -766,14 +789,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   gap: 16px;
 }
 
 .exercise-stats {
   display: flex;
-  gap: 28px;
+  gap: 24px;
 }
 
 .exercise-stat-item {
@@ -782,16 +805,19 @@ button {
 }
 
 .exercise-stat-label {
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: #8C929D;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9C9A96;
 }
 
 .exercise-stat-value {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
+  line-height: 1;
   color: #F0E2D0;
 }
 
@@ -801,34 +827,14 @@ button {
   gap: 10px;
 }
 
-.btn-add-circle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #F0E2D0;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all var(--transition-smooth);
-}
-
-.btn-add-circle:hover {
-  background-color: var(--color-sweet-cherry);
-  border-color: var(--color-sweet-cherry);
-  color: #FFFFFF;
-  transform: rotate(90deg);
-}
-
 .btn-add-program {
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   color: #F0E2D0;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 8px 14px;
+  background-color: rgba(17, 17, 17, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 9px 16px;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -838,44 +844,31 @@ button {
   transition: all var(--transition-smooth);
 }
 
-.btn-add-program:hover {
-  border-color: var(--color-sweet-cherry);
-  color: #FFFFFF;
-  background-color: var(--color-sweet-cherry);
-}
-
+.btn-add-program:hover,
 .btn-add-program.added {
-  background-color: var(--color-sweet-cherry);
   border-color: var(--color-sweet-cherry);
+  background-color: var(--color-sweet-cherry);
   color: #FFFFFF;
 }
 
 /* Programs Bottom CTA */
 .programs-bottom {
-  margin-top: 36px;
-}
-
-.programs-bottom-label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #706A62;
-  margin-bottom: 6px;
+  margin-top: 20px;
 }
 
 .programs-bottom-link {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
-  color: #141414;
-  border-bottom: 2px solid #141414;
-  padding-bottom: 4px;
-  transition: all var(--transition-smooth);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #111111;
+  border-bottom: 1px solid #111111;
+  padding-bottom: 2px;
+  transition: all var(--transition-fast);
 }
 
 .programs-bottom-link:hover {

@@ -12,7 +12,7 @@ const EXERCISE_DATA = {
       image: "/images/exercise_squat.jpg",
       instruction: "Штанга на плечах, спина прямая. Опускайся до параллели с полом, сохраняя контроль и упор в стопы.",
       sets: 4,
-      reps: 8
+      reps: 10
     },
     {
       index: "02",
@@ -27,8 +27,8 @@ const EXERCISE_DATA = {
       title: "СГИБАНИЯ НА БИЦЕПС",
       image: "/images/exercise_biceps.jpg",
       instruction: "Фиксируй локти у корпуса. Контролируй подъем снаряда и фазу плавного опускания без раскачки.",
-      sets: 3,
-      reps: 12
+      sets: 4,
+      reps: 10
     }
   ],
   balance: [
@@ -37,7 +37,7 @@ const EXERCISE_DATA = {
       title: "РУМЫНСКАЯ ТЯГА НА 1 НОГЕ",
       image: "/images/exercise_squat.jpg",
       instruction: "Удерживай осевой баланс, слегка сгибая опорную ногу. Отводи таз назад и контролируй корпус.",
-      sets: 3,
+      sets: 4,
       reps: 10
     },
     {
@@ -46,15 +46,15 @@ const EXERCISE_DATA = {
       image: "/images/exercise_row.jpg",
       instruction: "Напрягай кор и ягодицы. Плечи строго над локтями, нейтральное положение шеи и позвоночника.",
       sets: 4,
-      reps: "45 сек"
+      reps: 10
     },
     {
       index: "03",
       title: "БОКОВЫЕ ВЫПАДЫ С ВЕСОМ",
       image: "/images/exercise_biceps.jpg",
       instruction: "Широкий шаг в сторону, таз назад. Колено по вектору носка, сохраняй прямую спину.",
-      sets: 3,
-      reps: 12
+      sets: 4,
+      reps: 10
     }
   ],
   endurance: [
@@ -63,8 +63,8 @@ const EXERCISE_DATA = {
       title: "ИНТЕРВАЛЬНАЯ ТЯГА",
       image: "/images/exercise_row.jpg",
       instruction: "Работа на взрывную силу с минимальным интервалом отдыха. Держи ритмичное дыхание.",
-      sets: 5,
-      reps: 15
+      sets: 4,
+      reps: 10
     },
     {
       index: "02",
@@ -72,7 +72,7 @@ const EXERCISE_DATA = {
       image: "/images/exercise_squat.jpg",
       instruction: "Полное касание грудью пола, мощный толчок и мягкое приземление на две стопы.",
       sets: 4,
-      reps: 15
+      reps: 10
     },
     {
       index: "03",
@@ -80,7 +80,7 @@ const EXERCISE_DATA = {
       image: "/images/exercise_biceps.jpg",
       instruction: "Тяжелые гантели по бокам, расправленные плечи, ровный темп шага без наклонов корпуса.",
       sets: 4,
-      reps: "40 м"
+      reps: 10
     }
   ]
 };
@@ -136,7 +136,7 @@ function showToast(message) {
   const toast = document.createElement('div');
   toast.className = 'toast';
   toast.innerHTML = `
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B1E2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8E1533" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
     <span>${message}</span>
@@ -174,7 +174,7 @@ function renderExerciseCards() {
         <div class="exercise-card-overlay"></div>
       </div>
       <div class="exercise-card-top">
-        <span class="exercise-num">${item.index}</span>
+        <span class="exercise-num">${item.index} //</span>
         <h3 class="exercise-title">${item.title}</h3>
       </div>
       <div class="exercise-card-content">
@@ -182,20 +182,17 @@ function renderExerciseCards() {
         <div class="exercise-meta-bar">
           <div class="exercise-stats">
             <div class="exercise-stat-item">
-              <span class="exercise-stat-label">подходы</span>
+              <span class="exercise-stat-label">ПОДХОДЫ:</span>
               <span class="exercise-stat-value">${item.sets}</span>
             </div>
             <div class="exercise-stat-item">
-              <span class="exercise-stat-label">повторы</span>
+              <span class="exercise-stat-label">ПОВТОРЫ:</span>
               <span class="exercise-stat-value">${item.reps}</span>
             </div>
           </div>
           <div class="exercise-actions">
-            <button type="button" class="btn-add-circle add-to-routine-btn" data-exercise="${item.title}" aria-label="Добавить ${item.title}">
-              ${isAdded ? '✓' : '+'}
-            </button>
             <button type="button" class="btn-add-program add-to-routine-btn ${isAdded ? 'added' : ''}" data-exercise="${item.title}">
-              ${isAdded ? 'В ПРОГРАММЕ' : 'В МОЮ ПРОГРАММУ'}
+              ${isAdded ? '[ ✓ В ПРОГРАММЕ ]' : '[ + В МОЮ ПРОГРАММУ ]'}
             </button>
           </div>
         </div>
