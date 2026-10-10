@@ -14,6 +14,16 @@
 <body>
 
   <!-- =========================================================================
+       GLOBAL SCROLL-DRIVEN TIGER TRACKER & CONTINUOUS BURGUNDY RAIL
+       ========================================================================= -->
+  <aside class="tiger-rail" id="tiger-rail" aria-label="Индикатор прогресса прокрутки страницы">
+    <div class="tiger-track-line" aria-hidden="true"></div>
+    <div class="tiger-tracker" id="tiger-tracker" aria-hidden="true">
+      <div class="tiger-sprite" id="tiger-sprite"></div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
        HEADER / NAVIGATION
        ========================================================================= -->
   <header class="site-header" id="site-header">
@@ -86,11 +96,6 @@
             >
           </div>
         </div>
-
-        <!-- Far-Right Vertical Accent Ribbon -->
-        <div class="hero-ribbon" aria-hidden="true">
-          <span class="hero-ribbon-text">JOHN GYM // СИЛА И ДИСЦИПЛИНА // 2026</span>
-        </div>
       </div>
     </section>
 
@@ -103,7 +108,7 @@
         <div class="programs-header">
           <h2 class="programs-title">
             <span class="programs-title-black">СОБЕРИ СВОЮ</span><br>
-            <span class="programs-title-charcoal">ПРОГРАММУ ТРЕНИРОВОК.</span>
+            <span class="programs-title-charcoal">ПРОГРАММУ ТРЕНИРОВОК</span>
           </h2>
 
           <div class="programs-tabs" role="tablist" aria-label="Категории тренировок">
@@ -221,11 +226,6 @@
           </a>
         </div>
       </div>
-
-      <!-- Right Screen Edge: Persistent Full-Height Vertical Branding Strip (#8E1533) -->
-      <aside class="programs-ribbon" aria-hidden="true">
-        <span class="programs-ribbon-text">JOHN GYM // СИЛА И ДИСЦИПЛИНА // 2026</span>
-      </aside>
     </section>
 
     <!-- =======================================================================
@@ -235,25 +235,18 @@
     <section class="gym-section noise-texture" id="gym">
       <div class="gym-container">
         
-        <!-- ROW 1 — FACILITY AND EQUIPMENT -->
+        <!-- STANDALONE INTERIOR SHOWCASE -->
         <div class="gym-row">
           <div class="gym-text-col">
-            <div class="section-tag">
-              <span class="tag-bar"></span>
-              <span class="tag-num">03</span> // ПРОСТРАНСТВО И ОБОРУДОВАНИЕ
-            </div>
             <h2 class="gym-headline">
-              ИНДУСТРИАЛЬНЫЙ<br>
-              МАСШТАБ.<br>
-              <span class="text-crimson">БЕЗ КОМПРОМИССОВ.</span>
+              <span class="gym-headline-oat">ИНДУСТРИАЛЬНЫЙ МАСШТАБ</span>
+              <span class="gym-headline-crimson">БЕЗ КОМПРОМИССОВ</span>
             </h2>
             <p class="gym-description">
-              JOHN GYM — пространство для серьёзной работы.<br>
-              Свободные веса, силовые рамы и оборудование для полноценных тренировок.
+              Пространство для серьёзной работы. Свободные веса, соревновательные помосты и оборудование соревновательного класса в Шымкенте.
             </p>
-            <button type="button" class="btn btn-crimson-solid" id="gym-test-visit-btn" data-open-modal="test-visit">
-              <span>ТЕСТОВЫЙ ВИЗИТ</span>
-              <span class="btn-arrow" aria-hidden="true">→</span>
+            <button type="button" class="btn-gym-cta" id="gym-test-visit-btn" data-open-modal="test-visit">
+              <span>[ ТЕСТОВЫЙ ВИЗИТ → ]</span>
             </button>
           </div>
 
@@ -264,36 +257,6 @@
               class="gym-media-img gym-media-img-equipment"
               loading="lazy"
             >
-          </div>
-        </div>
-
-        <!-- ROW 2 — COACHING AND ATMOSPHERE -->
-        <div class="gym-row reverse-row" id="coaches">
-          <div class="gym-media-col">
-            <img 
-              src="/images/gym_coaches.jpg" 
-              alt="Тренерский штаб атлетического клуба JOHN GYM" 
-              class="gym-media-img"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="gym-text-col">
-            <div class="section-tag">
-              <span class="tag-bar"></span>
-              ТРЕНЕРСКИЙ ШТАБ
-            </div>
-            <h2 class="gym-headline">
-              СИСТЕМА<br>
-              НАСТАВНИЧЕСТВА.
-            </h2>
-            <p class="gym-description">
-              Индивидуальный подход, контроль техники и последовательная работа над результатом.
-            </p>
-            <button type="button" class="btn btn-border-coach" id="gym-choose-coach-btn" data-open-modal="coach">
-              <span>ВЫБРАТЬ НАСТАВНИКА</span>
-              <span class="btn-arrow" aria-hidden="true">→</span>
-            </button>
           </div>
         </div>
 
@@ -539,7 +502,7 @@
   <!-- =========================================================================
        FOOTER
        ========================================================================= -->
-  <footer class="site-footer noise-texture">
+  <footer class="site-footer noise-texture" id="footer">
     <div class="footer-container">
       <div class="footer-top">
         <div class="footer-brand-col">

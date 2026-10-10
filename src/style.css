@@ -54,7 +54,7 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --nav-height: 72px;
-  --ribbon-width: 48px;
+  --ribbon-width: 34px;
   --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -225,7 +225,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: var(--ribbon-width, 34px);
   height: var(--nav-height);
   background-color: var(--color-header-bg);
   color: var(--color-header-text);
@@ -404,7 +404,8 @@ button {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 50% 1fr var(--ribbon-width);
+  grid-template-columns: 50% 1fr;
+  padding-right: var(--ribbon-width, 34px);
   width: 100%;
   min-height: calc(100vh - var(--nav-height));
 }
@@ -539,38 +540,78 @@ button {
   object-position: center center;
 }
 
-/* Far-Right Vertical Accent Ribbon (#821630 & #D66D82) */
-.hero-ribbon {
-  background-color: var(--color-hero-ribbon-bg);
-  border-left: 1px solid rgba(255, 255, 255, 0.04);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  position: relative;
-  width: var(--ribbon-width);
-}
-
-.hero-ribbon-text {
-  writing-mode: vertical-rl;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-hero-ribbon-text);
-  white-space: nowrap;
-}
-
 /* ==========================================================================
-   SECTION 02 — PROGRAMS
-   Solid warm oat beige (#ECDCC4 / Wild Oats) canvas, chiaroscuro strength cards, Swiss grid
+   GLOBAL SCROLL-DRIVEN TIGER TRACKER & CONTINUOUS BURGUNDY RAIL
    ========================================================================== */
+.tiger-rail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--ribbon-width, 34px);
+  height: 100vh;
+  background-color: var(--color-sweet-cherry, #8E1533);
+  z-index: 1001;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: -3px 0 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Central subtle athletic track line */
+.tiger-track-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(236, 220, 196, 0.05) 0%,
+    rgba(236, 220, 196, 0.2) 10%,
+    rgba(236, 220, 196, 0.2) 90%,
+    rgba(236, 220, 196, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+/* Movable mascot container traveling down the rail */
+.tiger-tracker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 27px;
+  height: 48px;
+  pointer-events: none;
+  will-change: transform;
+  transform: translate3d(-50%, 14px, 0);
+  z-index: 5;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+}
+
+/* 6-frame sprite renderer (vertically oriented running down rail: legs toward website, back toward outer edge) */
+.tiger-sprite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 27px;
+  background-image: url('/assets/john-gym-tiger-sprite.png');
+  background-size: 288px 27px; /* 6 * 48px = 288px */
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transform-origin: center center;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Programs section layout */
 .programs-section {
   background-color: var(--color-wild-oats);
   color: #111111;
   min-height: 100vh;
-  padding: 100px calc(5vw + var(--ribbon-width, 48px)) 40px 5vw;
+  padding: 100px calc(5vw + var(--ribbon-width, 34px)) 40px 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -578,39 +619,9 @@ button {
   box-sizing: border-box;
 }
 
-/* Persistent full-height vertical branding strip in deep crimson burgundy (#8E1533) */
-.programs-ribbon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: var(--ribbon-width, 48px);
-  background-color: var(--color-sweet-cherry);
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  z-index: 10;
-}
-
-.programs-ribbon-text {
-  writing-mode: vertical-rl;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-wild-oats);
-  white-space: nowrap;
-}
-
 @media (max-width: 900px) {
   .programs-section {
     padding-right: 5vw;
-  }
-  .programs-ribbon {
-    display: none;
   }
 }
 
@@ -800,7 +811,8 @@ button {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #F0E2D0;
+  color: #A81B3E;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
 }
 
 /* Active exercise card: razor-sharp 2px #8E1533 border, scale-103, elevated chiaroscuro depth */
@@ -819,7 +831,9 @@ button {
 .exercise-instruction {
   font-size: 13.5px;
   line-height: 1.5;
-  color: #A0A5AF;
+  color: var(--color-wild-oats, #ECDCC4);
+  opacity: 0.90;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
   margin-bottom: 16px;
   max-width: 480px;
 }
@@ -849,7 +863,8 @@ button {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #9C9A96;
+  color: var(--color-wild-oats, #ECDCC4);
+  opacity: 0.85;
 }
 
 .exercise-stat-value {
@@ -857,7 +872,7 @@ button {
   font-size: 26px;
   font-weight: 700;
   line-height: 1;
-  color: #F0E2D0;
+  color: var(--color-wild-oats, #ECDCC4);
 }
 
 .exercise-actions {
@@ -934,29 +949,27 @@ button {
    Dark background, two-row industrial zigzag layout
    ========================================================================== */
 .gym-section {
-  background-color: var(--color-obsidian);
+  background-color: #000000;
   color: var(--color-bone);
-  padding: 90px 5vw 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px calc(5vw + var(--ribbon-width, 34px)) 100px 5vw;
+  box-sizing: border-box;
 }
 
 .gym-container {
-  max-width: 1600px;
+  max-width: 1680px;
+  width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
 }
 
 .gym-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.15fr;
   gap: 60px;
   align-items: center;
-}
-
-.gym-row.reverse-row {
-  grid-template-columns: 58% 1fr;
-  gap: 40px;
 }
 
 .gym-text-col {
@@ -967,65 +980,78 @@ button {
 
 .gym-headline {
   font-family: var(--font-heading);
-  font-size: clamp(38px, 4.2vw, 68px);
+  font-size: clamp(40px, 4.4vw, 72px);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 0.94;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--color-bone);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.gym-headline-oat {
+  color: var(--color-wild-oats, #ECDCC4);
+  display: block;
+}
+
+.gym-headline-crimson {
+  color: var(--color-sweet-cherry, #8E1533);
+  display: block;
 }
 
 .gym-description {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--color-text-muted);
-  margin-bottom: 32px;
-  max-width: 480px;
+  color: #8C929D;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.btn-gym-cta {
+  background-color: var(--color-sweet-cherry, #8E1533);
+  color: var(--color-wild-oats, #ECDCC4);
+  border: 1px solid var(--color-sweet-cherry, #8E1533);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  align-self: flex-start;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(142, 21, 51, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.btn-gym-cta:hover {
+  background-color: var(--color-crimson-hover, #A81B3E);
+  border-color: var(--color-crimson-hover, #A81B3E);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(142, 21, 51, 0.55);
 }
 
 .gym-media-col {
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
-  background-color: var(--color-surface);
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background-color: #0E0E10;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
 }
 
 .gym-media-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: brightness(0.9) contrast(1.1);
-  transition: transform 0.6s ease;
-}
-
-.gym-media-img-equipment {
   object-position: center 58%;
+  filter: brightness(0.92) contrast(1.15);
+  transition: transform 0.6s ease;
 }
 
 .gym-media-col:hover .gym-media-img {
   transform: scale(1.02);
-}
-
-.btn-crimson-solid {
-  background-color: var(--color-accent-orange);
-  color: #FFFFFF;
-  border: 1px solid var(--color-accent-orange);
-  font-weight: 700;
-  padding: 16px 36px;
-  border-radius: 2px;
-  align-self: flex-start;
-  box-shadow: 0 4px 20px rgba(252, 84, 30, 0.3);
-}
-
-.btn-crimson-solid:hover {
-  background-color: var(--color-accent-orange-hover);
-  border-color: var(--color-accent-orange-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(252, 84, 30, 0.5);
 }
 
 .btn-border-coach {
@@ -1155,7 +1181,7 @@ button {
   border-radius: 4px;
   overflow: hidden;
   height: 520px;
-  background-color: #08090A;
+  background-color: #E8E2D8;
   border: 1px solid var(--color-border);
   cursor: pointer;
 }
@@ -1165,7 +1191,6 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: contrast(1.1) brightness(0.85);
   transition: transform 0.4s ease;
 }
 
@@ -1177,8 +1202,8 @@ button {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
 }
@@ -1186,13 +1211,13 @@ button {
 /* Subtle Interactive Radar Pulse centered exactly over the location pin */
 .map-radar-pulse {
   position: absolute;
-  top: 59%;
-  left: 51.5%;
+  top: 49.5%;
+  left: 49.5%;
   width: 48px;
   height: 48px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 2px solid rgba(139, 30, 43, 0.85);
+  border: 2px solid rgba(142, 21, 51, 0.85);
   animation: mapPulse 2.2s infinite ease-out;
   pointer-events: none;
   z-index: 4;
@@ -2039,7 +2064,8 @@ button {
    ========================================================================== */
 @media (max-width: 1200px) {
   .hero-grid {
-    grid-template-columns: 48% 1fr 36px;
+    grid-template-columns: 48% 1fr;
+    padding-right: var(--ribbon-width, 34px);
   }
   
   .hero-left {
@@ -2061,6 +2087,11 @@ button {
 }
 
 @media (max-width: 992px) {
+  .site-header {
+    right: 0;
+    z-index: 1002;
+  }
+
   .nav-menu {
     position: fixed;
     top: var(--nav-height);
@@ -2077,7 +2108,7 @@ button {
     pointer-events: none;
     transition: transform var(--transition-smooth), opacity var(--transition-smooth), visibility var(--transition-smooth);
     box-shadow: 0 12px 28px rgba(52, 46, 55, 0.14);
-    z-index: 999;
+    z-index: 1001;
   }
   
   .nav-menu.active {
@@ -2093,11 +2124,32 @@ button {
   
   .hero-grid {
     grid-template-columns: 1fr;
+    padding-right: 0;
     min-height: auto;
   }
   
-  .hero-ribbon {
-    display: none;
+  :root {
+    --ribbon-width: 24px;
+  }
+  
+  .tiger-rail {
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    width: 24px;
+    z-index: 998;
+    overflow: hidden;
+    box-shadow: -1px 0 6px rgba(0, 0, 0, 0.18);
+  }
+  
+  .tiger-tracker {
+    width: 15px;
+    height: 27px;
+  }
+  
+  .tiger-sprite {
+    width: 27px;
+    height: 15px;
+    background-size: 162px 15px;
   }
   
   .hero-left {
@@ -2284,8 +2336,8 @@ button {
   }
   
   .map-radar-pulse {
-    top: 59%;
-    left: 51.5%;
+    top: 49.5%;
+    left: 49.5%;
   }
   
   .discount-strip {
@@ -2325,6 +2377,29 @@ button {
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    --ribbon-width: 20px;
+  }
+  .tiger-rail {
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    width: 20px;
+    z-index: 998;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .tiger-tracker {
+    width: 12px;
+    height: 22px;
+  }
+  .tiger-sprite {
+    width: 22px;
+    height: 12px;
+    background-size: 132px 12px;
+  }
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2332,5 +2407,11 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .tiger-tracker {
+    will-change: auto;
+  }
+  .tiger-sprite {
+    background-position: 0 0 !important;
   }
 }

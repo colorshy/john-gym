@@ -457,7 +457,81 @@ if (inquiryForm) {
   });
 }
 
+// =========================================================================
+// SCROLL-DRIVEN TIGER TRACKER CONTROLLER
+// =========================================================================
+function initTigerTracker() {
+  const tigerRail = document.getElementById('tiger-rail');
+  const tigerTracker = document.getElementById('tiger-tracker');
+  const tigerSprite = document.getElementById('tiger-sprite');
+
+  if (!tigerRail || !tigerTracker || !tigerSprite) return;
+
+  let ticking = false;
+  let cachedRailHeight = tigerRail.clientHeight || window.innerHeight;
+  let cachedDocHeight = document.documentElement.scrollHeight;
+  const topPadding = 14;
+  const bottomPadding = 14;
+
+  function updateDimensions() {
+    cachedRailHeight = tigerRail.clientHeight || window.innerHeight;
+    cachedDocHeight = document.documentElement.scrollHeight;
+  }
+
+  function updateTracker() {
+    ticking = false;
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const maxScroll = Math.max(cachedDocHeight - window.innerHeight, 1);
+    const progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+
+    const tigerHeight = tigerTracker.offsetHeight || 48;
+    const travelDistance = Math.max(cachedRailHeight - tigerHeight - topPadding - bottomPadding, 0);
+    const translateY = topPadding + progress * travelDistance;
+
+    // Hardware-accelerated GPU translation mathematically locked to rail center
+    tigerTracker.style.transform = `translate3d(-50%, ${translateY.toFixed(2)}px, 0)`;
+
+    // Check prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      // 45px per frame creates disciplined, crisp athletic cadence synchronized with scrolling
+      const pixelsPerFrame = 45;
+      const frameIndex = ((Math.floor(scrollY / pixelsPerFrame) % 6) + 6) % 6;
+      const frameWidth = tigerSprite.offsetWidth || 48;
+      tigerSprite.style.backgroundPosition = `-${frameIndex * frameWidth}px 0px`;
+    } else {
+      tigerSprite.style.backgroundPosition = '0px 0px';
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateTracker);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    updateDimensions();
+    onScroll();
+  }, { passive: true });
+
+  // Handle dynamic DOM changes
+  const resizeObserver = new ResizeObserver(() => {
+    updateDimensions();
+    onScroll();
+  });
+  resizeObserver.observe(document.body);
+
+  // Initial update
+  updateDimensions();
+  updateTracker();
+}
+
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
   renderExerciseCards();
+  initTigerTracker();
 });
+
