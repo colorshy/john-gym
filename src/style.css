@@ -652,15 +652,14 @@ button {
 }
 
 .program-tab {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 10px 18px 12px;
+  padding: 10px 20px 12px;
   border: 1px solid transparent;
   border-bottom: 3px solid transparent;
   border-radius: 4px;
-  text-align: left;
+  text-align: center;
   background: transparent;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -682,14 +681,7 @@ button {
 }
 
 .program-tab-sub {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #7E7870;
-  margin-top: 3px;
-  transition: color var(--transition-fast);
+  display: none;
 }
 
 .program-tab.active {
@@ -702,10 +694,6 @@ button {
 
 .program-tab.active .program-tab-title {
   color: #111111;
-}
-
-.program-tab.active .program-tab-sub {
-  color: var(--color-sweet-cherry);
 }
 
 /* Exercise Cards / Carousel */
