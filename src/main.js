@@ -69,7 +69,7 @@ const EXERCISE_DATA = {
     {
       index: "02",
       title: "02 // БЁРПИ С ПРЫЖКОМ НА ПЛАТФОРМУ",
-      image: "/images/exercise_squat.jpg",
+      image: "/images/exercise_boxjump.jpg",
       instruction: "Полное касание грудью пола, мощный толчок и мягкое приземление на две стопы.",
       sets: 4,
       reps: 10
@@ -77,7 +77,7 @@ const EXERCISE_DATA = {
     {
       index: "03",
       title: "03 // СИЛОВОЙ ФЕРМЕРСКИЙ ПРОХОД",
-      image: "/images/exercise_biceps.jpg",
+      image: "/images/exercise_farmer.jpg",
       instruction: "Тяжелые гантели по бокам, расправленные плечи, ровный темп шага без наклонов корпуса.",
       sets: 4,
       reps: 10
@@ -86,11 +86,11 @@ const EXERCISE_DATA = {
 };
 
 // State
-let currentCategory = 'balance';
-let activeCardIndex = 1; // 0-indexed: 1 = second card ("02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ")
+let currentCategory = 'endurance';
+let activeCardIndex = 1; // 0-indexed: 1 = second card ("02 // БЁРПИ С ПРЫЖКОМ НА ПЛАТФОРМУ")
 const addedExercises = new Set([
-  "02 // ПЛАНКА НА НЕСТАБИЛЬНОЙ ОПОРЕ",
-  "03 // БОКОВЫЕ ВЫПАДЫ С ВЕСОМ"
+  "01 // ИНТЕРВАЛЬНАЯ ТЯГА",
+  "03 // СИЛОВОЙ ФЕРМЕРСКИЙ ПРОХОД"
 ]);
 
 // DOM Elements

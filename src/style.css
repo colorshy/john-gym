@@ -721,15 +721,15 @@ button {
 }
 
 #exercise-card-1 .exercise-card-img {
-  object-position: center 25%;
+  object-position: center 45%;
 }
 
 #exercise-card-2 .exercise-card-img {
-  object-position: center 40%;
+  object-position: center 25%;
 }
 
 #exercise-card-3 .exercise-card-img {
-  object-position: center 55%;
+  object-position: center 20%;
 }
 
 .exercise-card:hover .exercise-card-img {
