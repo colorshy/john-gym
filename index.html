@@ -39,9 +39,15 @@
        GLOBAL SCROLL-DRIVEN TIGER TRACKER & CONTINUOUS BURGUNDY RAIL
        ========================================================================= -->
   <aside class="tiger-rail" id="tiger-rail" aria-label="Индикатор прогресса прокрутки страницы">
-    <div class="tiger-track-line" aria-hidden="true"></div>
     <div class="tiger-tracker" id="tiger-tracker" aria-hidden="true">
       <div class="tiger-sprite" id="tiger-sprite"></div>
+      <div class="tiger-track-text" id="tiger-track-text">
+        <span>JOHN GYM</span>
+        <span class="track-dot">•</span>
+        <span>СИЛА В ДВИЖЕНИИ</span>
+        <span class="track-dot">•</span>
+        <span>ШЫМКЕНТ</span>
+      </div>
     </div>
   </aside>
 
@@ -51,8 +57,7 @@
   <header class="site-header" id="site-header">
     <div class="nav-container">
       <a href="#hero" class="brand-mark" id="nav-brand" aria-label="JOHN GYM Главная">
-        <span class="brand-john">JOHN</span>
-        <span class="brand-gym">GYM</span>
+        <img src="/images/Roaring Tiger John Gym Emblem.png" alt="JOHN GYM">
       </a>
 
       <nav aria-label="Основная навигация">
@@ -153,11 +158,11 @@
             <!-- Card 01: Barbell Back Squat -->
             <article class="exercise-card" data-index="0" id="exercise-card-1" tabindex="0">
               <div class="exercise-card-media">
-                <img src="/images/exercise_squat.jpg" alt="01 // ПРИСЕДАНИЯ СО ШТАНГОЙ" class="exercise-card-img" loading="lazy">
+                <img src="/images/exercise_squat.jpg" alt="01 ПРИСЕДАНИЯ СО ШТАНГОЙ" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <h3 class="exercise-title">01 // ПРИСЕДАНИЯ СО ШТАНГОЙ</h3>
+                <h3 class="exercise-title">01 ПРИСЕДАНИЯ СО ШТАНГОЙ</h3>
               </div>
               <div class="exercise-card-content">
                 <p class="exercise-instruction sr-only">Штанга на плечах, спина прямая. Опускайся до параллели с полом, сохраняя контроль и упор в стопы.</p>
@@ -182,11 +187,11 @@
             <!-- Card 02: Single-Arm Dumbbell Row (Active Center Card) -->
             <article class="exercise-card active-card" data-index="1" id="exercise-card-2" tabindex="0">
               <div class="exercise-card-media">
-                <img src="/images/exercise_db_row.jpg" alt="02 // ТЯГА ГАНТЕЛИ В НАКЛОНЕ" class="exercise-card-img" loading="lazy">
+                <img src="/images/exercise_db_row.jpg" alt="02 ТЯГА ГАНТЕЛИ В НАКЛОНЕ" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <h3 class="exercise-title">02 // ТЯГА ГАНТЕЛИ В НАКЛОНЕ</h3>
+                <h3 class="exercise-title">02 ТЯГА ГАНТЕЛИ В НАКЛОНЕ</h3>
               </div>
               <div class="exercise-card-content">
                 <p class="exercise-instruction">Упрись одной рукой и коленом в скамью. Держи спину ровно и подтягивай гантель к поясу.</p>
@@ -211,11 +216,11 @@
             <!-- Card 03: Dumbbell Bicep Curls -->
             <article class="exercise-card" data-index="2" id="exercise-card-3" tabindex="0">
               <div class="exercise-card-media">
-                <img src="/images/exercise_biceps.jpg" alt="03 // ПОДЪЕМ НА БИЦЕПС" class="exercise-card-img" loading="lazy">
+                <img src="/images/exercise_biceps.jpg" alt="03 ПОДЪЕМ НА БИЦЕПС" class="exercise-card-img" loading="lazy">
                 <div class="exercise-card-overlay"></div>
               </div>
               <div class="exercise-card-top">
-                <h3 class="exercise-title">03 // ПОДЪЕМ НА БИЦЕПС</h3>
+                <h3 class="exercise-title">03 ПОДЪЕМ НА БИЦЕПС</h3>
               </div>
               <div class="exercise-card-content">
                 <p class="exercise-instruction sr-only">Фиксируй локти у корпуса. Контролируй подъем снаряда и фазу плавного опускания без раскачки.</p>
@@ -268,7 +273,7 @@
               Пространство для серьёзной работы. Свободные веса, соревновательные помосты и оборудование соревновательного класса в Шымкенте.
             </p>
             <button type="button" class="btn-gym-cta" id="gym-test-visit-btn" data-open-modal="test-visit">
-              <span>[ ТЕСТОВЫЙ ВИЗИТ → ]</span>
+              <span>ТЕСТОВЫЙ ВИЗИТ →</span>
             </button>
           </div>
 
@@ -296,7 +301,6 @@
         <!-- Left Editorial Column -->
         <div class="location-info-col">
           <div class="section-tag location-eyebrow">
-            <span class="tag-num">04</span>
             <span class="tag-text">ЛОКАЦИЯ И РЕЖИМ</span>
           </div>
 
@@ -315,8 +319,12 @@
               <span class="meta-val">Шымкент, ул. Толе би, 12В</span>
             </div>
             <div class="location-meta-row">
-              <span class="meta-label">СВЯЗЬ</span>
-              <a href="tel:+77053457007" class="meta-val meta-link">+7 (705) 345-70-07</a>
+              <span class="meta-label">ЗВОНОК</span>
+              <a href="tel:+77077266507" class="meta-val meta-link">+7 (707) 726-65-07</a>
+            </div>
+            <div class="location-meta-row">
+              <span class="meta-label">WHATSAPP</span>
+              <a href="https://wa.me/77063457007" class="meta-val meta-link" target="_blank" rel="noopener noreferrer">+7 (706) 345-70-07</a>
             </div>
             <div class="location-meta-row">
               <span class="meta-label">ПН — СБ</span>
@@ -352,7 +360,7 @@
             id="location-map-interactive"
             aria-label="Открыть расположение JOHN GYM в 2GIS"
           >
-            <img src="/images/map_bg.jpg" alt="Карта расположения JOHN GYM на улице Толе би в Шымкенте" class="map-background-img" loading="lazy">
+            <img src="/images/map_bg.png" alt="Карта расположения JOHN GYM на улице Толе би в Шымкенте" class="map-background-img" loading="lazy">
             <div class="map-grid-overlay" aria-hidden="true"></div>
           </a>
         </div>
@@ -368,7 +376,6 @@
         <!-- Section Header -->
         <div class="memberships-header">
           <div class="section-tag">
-            <span class="tag-num">05</span>
             <span class="tag-text">АБОНЕМЕНТЫ</span>
           </div>
           <h2 class="memberships-headline">
@@ -518,6 +525,116 @@
         </div>
       </div>
     </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="faq-container">
+        <header class="faq-header">
+          <div class="section-tag faq-eyebrow">
+            <span class="tag-text">FAQ / ВОПРОСЫ И ОТВЕТЫ</span>
+          </div>
+          <h2 class="faq-title" id="faq-title">ЕСТЬ ВОПРОСЫ?</h2>
+          <p class="faq-subtitle">Всё, что нужно знать перед первой тренировкой в JOHN GYM</p>
+        </header>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-1" aria-expanded="false" aria-controls="faq-answer-1">
+                <span>Как записаться на первую тренировку?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Оставьте заявку через форму на сайте или свяжитесь с администратором. Вам помогут выбрать подходящее время и расскажут о первом посещении</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">
+                <span>Можно ли прийти без опыта тренировок?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Да. В JOHN GYM можно начать заниматься с нуля. Выберите подходящий формат тренировок и постепенно двигайтесь к своим целям</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">
+                <span>Какие абонементы доступны?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Доступные тарифы и условия посещения представлены в разделе абонементов. Если нужна помощь с выбором, свяжитесь с администратором</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-4" aria-expanded="false" aria-controls="faq-answer-4">
+                <span>Есть ли персональные тренировки?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Да, вы можете уточнить доступность персональных тренировок, подобрать тренера и обсудить индивидуальную программу с администрацией клуба</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-5" aria-expanded="false" aria-controls="faq-answer-5">
+                <span>Что взять с собой на первую тренировку?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Возьмите спортивную одежду, чистую сменную обувь, полотенце и воду. Если у клуба есть дополнительные требования, уточните их перед визитом</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-6" aria-expanded="false" aria-controls="faq-answer-6">
+                <span>Какой график работы клуба?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Понедельник–суббота: 09:00–23:00. Воскресенье: 09:00–22:00</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-7" aria-expanded="false" aria-controls="faq-answer-7">
+                <span>Где находится JOHN GYM?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Шымкент, улица Толе би, 12В. Откройте раздел локации на сайте, чтобы посмотреть карту и построить маршрут</p></div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question-heading">
+              <button class="faq-question" type="button" id="faq-question-8" aria-expanded="false" aria-controls="faq-answer-8">
+                <span>Как связаться с администрацией?</span>
+                <span class="faq-toggle-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8" aria-hidden="true" inert>
+              <div class="faq-answer-inner"><p>Используйте актуальные контактные данные и способы связи, указанные на сайте JOHN GYM</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- =========================================================================
@@ -558,9 +675,9 @@
           <h4 class="footer-col-title">КОНТАКТЫ</h4>
           <div class="footer-contact-items">
             <p>г. Шымкент, ул. Толе би, 12В</p>
-            <p><a href="tel:+77053457007">+7 (705) 345-70-07</a></p>
+            <p>Звонок: <a href="tel:+77077266507">+7 (707) 726-65-07</a></p>
             <p><a href="https://instagram.com/john_gym777" target="_blank" rel="noopener noreferrer">Instagram: @john_gym777</a></p>
-            <p><a href="https://wa.me/77053457007" target="_blank" rel="noopener noreferrer">WhatsApp: +7 705 345 70 07</a></p>
+            <p><a href="https://wa.me/77063457007" target="_blank" rel="noopener noreferrer">WhatsApp: +7 (706) 345-70-07</a></p>
           </div>
         </div>
 
@@ -575,15 +692,10 @@
       </div>
 
       <div class="footer-bottom">
-        <div class="footer-entity-info">
-          <p class="footer-entity-headline">Исполнитель услуг / Оператор базы данных:</p>
-          <p>Спортивный клуб «JOHN GYM» (ИП / ТОО [требуется указание юридического лица]) · БИН/ИИН: [требуется подтверждение владельца]</p>
-          <p>г. Шымкент, ул. Толе би, 12В · Серверы хранения персональных данных: Республика Казахстан (ст. 12 Закона РК № 94-V)</p>
-          <p>Отзыв согласий и обращения по персональным данным: <a href="tel:+77053457007">+7 (705) 345-70-07</a> · <a href="https://wa.me/77053457007" target="_blank" rel="noopener noreferrer">WhatsApp Администратора</a></p>
-        </div>
         <div class="footer-copyright-meta">
           <p>© 2026 JOHN GYM. Все права защищены. Шымкент, Казахстан.</p>
           <p>ATHLETIC PERFORMANCE DIVISION · 2026</p>
+          <p class="footer-credit">DESIGNED &amp; DEVELOPED BY <span>.1VOYSY TEAM</span></p>
         </div>
       </div>
     </div>
@@ -749,7 +861,7 @@
             Субъект персональных данных имеет право на доступ к своим данным, требование их уточнения, блокирования или уничтожения. Для отзыва согласия или запроса вы можете обратиться к администратору клуба:
           </p>
           <p>
-            Телефон: <a href="tel:+77053457007">+7 (705) 345-70-07</a> · WhatsApp: <a href="https://wa.me/77053457007" target="_blank" rel="noopener noreferrer">+7 705 345 70 07</a> · г. Шымкент, ул. Толе би, 12В.
+            Телефон: <a href="tel:+77077266507">+7 (707) 726-65-07</a> · WhatsApp: <a href="https://wa.me/77063457007" target="_blank" rel="noopener noreferrer">+7 (706) 345-70-07</a> · г. Шымкент, ул. Толе би, 12В.
           </p>
         </article>
 
@@ -776,7 +888,7 @@
           </ul>
 
           <p>
-            Я подтверждаю, что проинформирован(а) о праве отозвать настоящее согласие в любое время путем направления соответствующего уведомления по контактному номеру: <strong>+7 (705) 345-70-07</strong>.
+            Я подтверждаю, что проинформирован(а) о праве отозвать настоящее согласие в любое время путем направления соответствующего уведомления по контактному номеру: <strong>+7 (707) 726-65-07</strong>.
           </p>
         </article>
 

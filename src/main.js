@@ -164,6 +164,7 @@ function renderExerciseCards() {
   exercises.forEach((item, idx) => {
     const isActive = idx === activeCardIndex;
     const isAdded = addedExercises.has(item.title);
+    const displayTitle = item.title.replace(' // ', ' ');
 
     const card = document.createElement('article');
     card.className = `exercise-card ${isActive ? 'active-card' : ''}`;
@@ -173,11 +174,11 @@ function renderExerciseCards() {
 
     card.innerHTML = `
       <div class="exercise-card-media">
-        <img src="${item.image}" alt="${item.title}" class="exercise-card-img" loading="lazy">
+        <img src="${item.image}" alt="${displayTitle}" class="exercise-card-img" loading="lazy">
         <div class="exercise-card-overlay"></div>
       </div>
       <div class="exercise-card-top">
-        <h3 class="exercise-title">${item.title}</h3>
+        <h3 class="exercise-title">${displayTitle}</h3>
       </div>
       <div class="exercise-card-content">
         <p class="exercise-instruction ${isActive ? '' : 'sr-only'}">${item.instruction}</p>
@@ -268,7 +269,7 @@ function openModal(options = {}) {
   // Update WhatsApp link target
   const selectedPlanText = formPlan ? formPlan.value : 'Тренировки в JOHN GYM';
   const waText = encodeURIComponent(`Здравствуйте! Хочу уточнить детали и записаться в JOHN GYM (Шымкент): ${selectedPlanText}`);
-  modalWhatsApp.href = `https://wa.me/77053457007?text=${waText}`;
+  modalWhatsApp.href = `https://wa.me/77063457007?text=${waText}`;
 
   // Reset form state
   inquiryForm.style.display = 'block';
@@ -280,6 +281,25 @@ function openModal(options = {}) {
 function closeModal() {
   inquiryModal.classList.remove('active');
   document.body.style.overflow = '';
+}
+
+function initFaqAccordion() {
+  const faqSection = document.getElementById('faq');
+  if (!faqSection) return;
+
+  faqSection.addEventListener('click', (event) => {
+    const trigger = event.target.closest('.faq-question');
+    if (!trigger || !faqSection.contains(trigger)) return;
+
+    const answer = document.getElementById(trigger.getAttribute('aria-controls'));
+    if (!answer) return;
+
+    const expanded = trigger.getAttribute('aria-expanded') !== 'true';
+    trigger.setAttribute('aria-expanded', String(expanded));
+    trigger.closest('.faq-item').classList.toggle('is-open', expanded);
+    answer.setAttribute('aria-hidden', String(!expanded));
+    answer.inert = !expanded;
+  });
 }
 
 // Attach Modal Triggers
@@ -425,7 +445,7 @@ document.addEventListener('keydown', (e) => {
 if (formPlan) {
   formPlan.addEventListener('change', () => {
     const waText = encodeURIComponent(`Здравствуйте! Хочу уточнить детали и записаться в JOHN GYM (Шымкент): ${formPlan.value}`);
-    modalWhatsApp.href = `https://wa.me/77053457007?text=${waText}`;
+    modalWhatsApp.href = `https://wa.me/77063457007?text=${waText}`;
   });
 }
 
@@ -524,6 +544,13 @@ function initTigerTracker() {
   });
   resizeObserver.observe(document.body);
 
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      updateDimensions();
+      updateTracker();
+    });
+  }
+
   // Initial update
   updateDimensions();
   updateTracker();
@@ -605,11 +632,176 @@ function initLocationReveal() {
   observer.observe(section);
 }
 
+// =========================================================================
+// KINETIC TYPOGRAPHY & MAGNETIC PHYSICAL INTERACTION SYSTEM
+// =========================================================================
+function initKineticTypography() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // 1. HERO HEADLINE MAGNETIC DISTORTION
+  const heroTitle = document.querySelector('.hero-title');
+  const heroWrap = document.querySelector('.hero-content-wrap') || heroTitle?.parentElement;
+
+  if (heroTitle && heroWrap) {
+    const lines = heroTitle.querySelectorAll('.hero-line');
+    const charElements = [];
+
+    // Split text cleanly into character spans without altering layout
+    lines.forEach((line) => {
+      const rawText = line.textContent.trim();
+      line.textContent = '';
+      const frag = document.createDocumentFragment();
+
+      for (let i = 0; i < rawText.length; i++) {
+        const char = rawText[i];
+        if (char === ' ') {
+          const spaceSpan = document.createElement('span');
+          spaceSpan.className = 'hero-char-space';
+          spaceSpan.innerHTML = '&nbsp;';
+          frag.appendChild(spaceSpan);
+        } else {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'hero-char';
+          charSpan.textContent = char;
+          frag.appendChild(charSpan);
+          charElements.push(charSpan);
+        }
+      }
+      line.appendChild(frag);
+    });
+
+    if (isFinePointer && !prefersReduced) {
+      let heroRaf = null;
+      let mouseX = 0;
+      let mouseY = 0;
+      let isHeroHovered = false;
+
+      let cachedCenters = [];
+      function cacheCharCenters() {
+        cachedCenters = charElements.map((el) => {
+          const rect = el.getBoundingClientRect();
+          return {
+            el,
+            cx: rect.left + rect.width / 2,
+            cy: rect.top + rect.height / 2
+          };
+        });
+      }
+
+      cacheCharCenters();
+      window.addEventListener('resize', cacheCharCenters, { passive: true });
+      window.addEventListener('scroll', cacheCharCenters, { passive: true });
+
+      const magneticRadius = 160;
+      const maxOffset = 6.5;
+
+      function renderHeroDistortion() {
+        heroRaf = null;
+        if (!isHeroHovered) {
+          charElements.forEach((el) => {
+            el.style.transform = 'translate3d(0, 0, 0)';
+          });
+          return;
+        }
+
+        cachedCenters.forEach(({ el, cx, cy }) => {
+          const dx = mouseX - cx;
+          const dy = mouseY - cy;
+          const dist = Math.hypot(dx, dy);
+
+          if (dist < magneticRadius && dist > 0.1) {
+            const pull = Math.pow(1 - dist / magneticRadius, 1.8);
+            const shiftX = (dx / dist) * pull * maxOffset;
+            const shiftY = (dy / dist) * pull * maxOffset;
+            el.style.transform = `translate3d(${shiftX.toFixed(2)}px, ${shiftY.toFixed(2)}px, 0)`;
+          } else {
+            el.style.transform = 'translate3d(0, 0, 0)';
+          }
+        });
+      }
+
+      heroWrap.addEventListener('pointermove', (e) => {
+        isHeroHovered = true;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!heroRaf) {
+          heroRaf = requestAnimationFrame(renderHeroDistortion);
+        }
+      }, { passive: true });
+
+      heroWrap.addEventListener('pointerleave', () => {
+        isHeroHovered = false;
+        if (!heroRaf) {
+          heroRaf = requestAnimationFrame(renderHeroDistortion);
+        }
+      }, { passive: true });
+    }
+  }
+
+  // 2. NAVIGATION AND BUTTONS MAGNETIC HOVER
+  const magneticItems = document.querySelectorAll('.nav-link, .nav-btn-cabinet, .btn-hero-cta');
+
+  if (isFinePointer && !prefersReduced) {
+    magneticItems.forEach((el) => {
+      const isHeroBtn = el.classList.contains('btn-hero-cta');
+      const maxMove = isHeroBtn ? 6.5 : 4;
+      const arrow = isHeroBtn ? el.querySelector('.btn-arrow') : null;
+      let magRaf = null;
+
+      function onPointerMove(e) {
+        const rect = el.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const dx = (e.clientX - centerX) * 0.28;
+        const dy = (e.clientY - centerY) * 0.28;
+
+        const moveX = Math.max(Math.min(dx, maxMove), -maxMove);
+        const moveY = Math.max(Math.min(dy, maxMove), -maxMove);
+
+        if (magRaf) cancelAnimationFrame(magRaf);
+        magRaf = requestAnimationFrame(() => {
+          el.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0)`;
+          if (arrow) {
+            arrow.style.transform = `translate3d(${(moveX * 0.5).toFixed(1)}px, ${(moveY * 0.5).toFixed(1)}px, 0)`;
+          }
+        });
+      }
+
+      function onPointerLeave() {
+        if (magRaf) cancelAnimationFrame(magRaf);
+        el.style.transform = 'translate3d(0, 0, 0)';
+        if (arrow) {
+          arrow.style.transform = '';
+        }
+      }
+
+      el.addEventListener('pointermove', onPointerMove, { passive: true });
+      el.addEventListener('pointerleave', onPointerLeave, { passive: true });
+    });
+  }
+
+  // 3. TOUCH DEVICES / RESTRAINED TAP FEEDBACK (NO STICKY HOVER)
+  const interactiveTypographyElements = document.querySelectorAll(
+    '.programs-title, .gym-headline, .location-headline, .memberships-headline, .nav-link, .nav-btn-cabinet, .btn-hero-cta'
+  );
+
+  interactiveTypographyElements.forEach((el) => {
+    el.addEventListener('pointerdown', () => {
+      el.classList.add('kinetic-tap-pulse');
+      setTimeout(() => el.classList.remove('kinetic-tap-pulse'), 220);
+    }, { passive: true });
+  });
+}
+
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
   initBlackIntro();
   renderExerciseCards();
+  initFaqAccordion();
   initTigerTracker();
   initLocationReveal();
+  initKineticTypography();
 });
+
 
